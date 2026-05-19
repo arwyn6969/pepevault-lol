@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local working files
+*.tmp
+*.bak
+/_local/
+/_scratch/
+
+# Build output (currently none — site is no-build)
+/dist/
+/build/
+
+# Dependencies (currently none — site is no-build)
+/node_modules/
+
+# Backup snapshots from prior versions live in /v30-backup/ — keep them committed for rollback.
+# If you create your own local backups, name them with _local prefix to be ignored.
+_local_*

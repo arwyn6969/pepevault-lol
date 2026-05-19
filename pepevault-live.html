@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEPEVAULT LIVE — Streaming Soon From Prague · June 11 2026</title>
+<meta name="description" content="Live stream from PEPEX Prague at Cross Club basement, June 11 2026 21:00 CET. The 600000000000.com warmup featuring 18 verified Pepe artists.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PEPEVAULT LIVE — Streaming Soon From Prague">
+<meta property="og:description" content="Live from PEPEX Prague · Cross Club basement · June 11 2026 · 21:00 CET. The 600000000000.com warmup.">
+<meta property="og:image" content="https://pub.hyperagent.com/api/published/pbf01KRSNYP97_2P4Z9H3WRRZNPB4S/live-prague-hero.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:site_name" content="PepeVault Live">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@pepevault1">
+<meta name="twitter:title" content="PEPEVAULT LIVE — Streaming Soon From Prague">
+<meta name="twitter:description" content="Live from PEPEX Prague · Cross Club basement · June 11 2026 · 21:00 CET">
+<meta name="twitter:image" content="https://pub.hyperagent.com/api/published/pbf01KRSNYP97_2P4Z9H3WRRZNPB4S/live-prague-hero.png">
+<link rel="icon" type="image/svg+xml" href="https://pub.hyperagent.com/api/published/pbf01KRSD8816_X90J95C9MRF1JMR6/pepevault-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pv-green: #83b437;
+  --pv-green-bright: #9DC74A;
+  --pv-green-soft: #6A9128;
+  --pv-green-dark: #4A6519;
+  --pv-black: #0E0F0C;
+  --pv-ink: #161812;
+  --pv-cream: #F5EFE0;
+  --pv-paper: #FAF5E8;
+  --pv-amber: #E8A33C;
+  --pv-red: #E63946;
+  --pv-white: #FFFFFF;
+  --pv-gray: #8A8A82;
+  --pv-divider: rgba(131, 180, 55, 0.22);
+  --shadow-soft: 0 8px 28px rgba(14, 15, 12, 0.18);
+  --shadow-firm: 0 14px 40px rgba(14, 15, 12, 0.22);
+  --radius-card: 8px;
+  --radius-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--pv-black);
+  color: var(--pv-cream);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.display, h1, h2, h3, h4 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.025em; line-height: 0.95; font-weight: 400; }
+h1 { font-size: clamp(3.5rem, 11vw, 9rem); }
+h2 { font-size: clamp(2.4rem, 6.5vw, 5rem); }
+h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.95rem; letter-spacing: 0.32em;
+  color: var(--pv-green-bright); margin-bottom: 1.2rem; text-transform: uppercase;
+}
+.center { text-align: center; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 3rem); }
+.container-narrow { max-width: 940px; margin: 0 auto; padding: 0 clamp(1rem, 5vw, 3rem); }
+.section { padding: clamp(4rem, 9vw, 7rem) 0; position: relative; }
+
+/* ===== ON-AIR PULSE ANIMATION ===== */
+@keyframes onair-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+  50% { opacity: 0.85; box-shadow: 0 0 0 12px rgba(230, 57, 70, 0); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
+}
+
+/* ===== NAV ===== */
+.live-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.85rem clamp(1rem, 5vw, 3rem);
+  background: rgba(14, 15, 12, 0.92); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--pv-divider);
+}
+.live-nav-brand img { height: 44px; width: auto; transition: transform 0.2s; }
+.live-nav-brand:hover img { transform: rotate(-3deg); }
+.live-nav-right { display: flex; align-items: center; gap: 1.4rem; font-family: 'Bebas Neue'; letter-spacing: 0.15em; font-size: 1rem; }
+.live-back { color: var(--pv-cream); transition: color 0.15s; }
+.live-back:hover { color: var(--pv-green-bright); }
+.onair-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--pv-red); color: var(--pv-white);
+  padding: 0.35rem 0.85rem; border-radius: var(--radius-pill);
+  font-family: 'Bebas Neue'; font-size: 0.85rem; letter-spacing: 0.2em;
+}
+.onair-badge::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--pv-white); animation: onair-pulse 1.5s ease-in-out infinite;
+}
+.onair-badge.offair { background: var(--pv-green-dark); }
+.onair-badge.offair::before { animation: none; opacity: 0.4; }
+
+/* ===== HERO ===== */
+.live-hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  padding: 8rem 0 3rem; overflow: hidden;
+}
+.live-hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://pub.hyperagent.com/api/published/pbf01KRSNYP97_2P4Z9H3WRRZNPB4S/live-prague-hero.png');
+  background-size: cover; background-position: center;
+  animation: flicker 4s ease-in-out infinite;
+}
+.live-hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(14,15,12,0.4) 0%, transparent 30%, rgba(14,15,12,0.7) 75%, rgba(14,15,12,0.98) 100%),
+    radial-gradient(circle at 70% 50%, transparent 0%, rgba(14,15,12,0.5) 80%);
+}
+.live-hero-content { position: relative; z-index: 2; width: 100%; }
+.live-hero h1 {
+  color: var(--pv-white); margin-bottom: 1rem;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.65), 3px 3px 0 var(--pv-black);
+}
+.live-hero h1 .accent { color: var(--pv-green-bright); }
+.live-hero-sub {
+  font-family: 'Bebas Neue'; font-size: clamp(1.1rem, 2vw, 1.7rem);
+  letter-spacing: 0.18em; color: var(--pv-cream); max-width: 60ch;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  margin-bottom: 2.5rem;
+}
+
+/* ===== COUNTDOWN CARDS ===== */
+.countdowns-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  max-width: 1100px; margin: 0 auto;
+}
+@media (max-width: 880px) { .countdowns-grid { grid-template-columns: 1fr; } }
+.countdown-card {
+  background: rgba(22, 24, 18, 0.92); backdrop-filter: blur(12px);
+  border: 2px solid var(--pv-green-dark);
+  border-radius: var(--radius-card); padding: 1.8rem 1.6rem;
+  box-shadow: var(--shadow-firm);
+}
+.countdown-card.countdown-primary {
+  border-color: var(--pv-green); border-width: 3px;
+  box-shadow: 0 0 0 1px rgba(131, 180, 55, 0.18), 0 16px 50px rgba(131,180,55,0.18);
+}
+.countdown-label {
+  font-family: 'Bebas Neue'; font-size: 0.95rem; letter-spacing: 0.28em;
+  color: var(--pv-green-bright); margin-bottom: 0.3rem;
+}
+.countdown-card.countdown-primary .countdown-label { font-size: 1.1rem; }
+.countdown-date {
+  font-family: 'Bebas Neue'; font-size: 1.2rem; letter-spacing: 0.06em;
+  color: var(--pv-cream); margin-bottom: 1.6rem;
+}
+.countdown-clock {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem;
+}
+.countdown-clock .unit {
+  background: var(--pv-black);
+  border: 1px solid var(--pv-green-dark); border-radius: 6px;
+  padding: 0.7rem 0.4rem; text-align: center;
+}
+.countdown-clock .unit-num {
+  font-family: 'Bebas Neue'; font-size: clamp(1.7rem, 4vw, 2.6rem);
+  line-height: 1; color: var(--pv-green-bright); letter-spacing: 0.04em;
+  display: block;
+}
+.countdown-clock .unit-label {
+  font-family: 'Bebas Neue'; font-size: 0.65rem; letter-spacing: 0.25em;
+  color: var(--pv-gray); margin-top: 0.4rem; display: block;
+}
+.countdown-clock.live-now {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--pv-red); border-radius: 6px; padding: 1.5rem;
+  font-family: 'Bebas Neue'; color: var(--pv-white);
+  font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: 0.18em;
+  animation: onair-pulse 1.5s ease-in-out infinite;
+}
+.countdown-clock.ended {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--pv-green-dark); border-radius: 6px; padding: 1.5rem;
+  font-family: 'Bebas Neue'; color: var(--pv-cream); opacity: 0.6;
+  font-size: clamp(1.3rem, 3vw, 1.8rem); letter-spacing: 0.18em;
+}
+
+/* ===== STREAM PLAYER ===== */
+.stream-section { background: var(--pv-ink); border-top: 4px solid var(--pv-green); }
+.stream-section h2 { color: var(--pv-green-bright); text-align: center; margin-bottom: 0.5rem; }
+.stream-sub { text-align: center; font-family: 'Bebas Neue'; letter-spacing: 0.2em; color: var(--pv-cream); margin-bottom: 2.5rem; font-size: 1.1rem; }
+.stream-player {
+  max-width: 1100px; margin: 0 auto;
+  border: 3px solid var(--pv-green); border-radius: var(--radius-card);
+  overflow: hidden; box-shadow: 0 25px 70px rgba(131,180,55,0.25), 0 0 0 1px rgba(131,180,55,0.15);
+  position: relative;
+}
+.stream-player img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.stream-player::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(14,15,12,0.4) 100%);
+  pointer-events: none;
+}
+.stream-note {
+  text-align: center; font-family: 'Bebas Neue'; letter-spacing: 0.16em;
+  color: var(--pv-green-bright); margin-top: 1.8rem; max-width: 700px; margin-left: auto; margin-right: auto;
+  font-size: 1rem;
+}
+
+/* ===== EXPECT ===== */
+.expect-section { background: var(--pv-black); }
+.expect-section h2 { color: var(--pv-green-bright); text-align: center; margin-bottom: 0.5rem; }
+.expect-sub { text-align: center; font-family: 'Bebas Neue'; letter-spacing: 0.2em; color: var(--pv-cream); margin-bottom: 3rem; }
+.expect-list {
+  list-style: none; max-width: 760px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+}
+@media (max-width: 740px) { .expect-list { grid-template-columns: 1fr; } }
+.expect-list li {
+  background: var(--pv-ink); border: 1.5px solid var(--pv-divider);
+  border-radius: var(--radius-card); padding: 1.1rem 1.3rem;
+  font-family: 'Space Grotesk'; font-size: 1.02rem; color: var(--pv-cream);
+  position: relative; padding-left: 2.6rem;
+  transition: all 0.2s;
+}
+.expect-list li:hover { border-color: var(--pv-green); transform: translateX(4px); }
+.expect-list li::before {
+  content: '⚡'; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+  color: var(--pv-green-bright); font-size: 1.3rem;
+}
+
+/* ===== SUBSCRIBE ===== */
+.subscribe-section { background: var(--pv-ink); text-align: center; border-top: 1px solid var(--pv-divider); }
+.subscribe-section h2 { color: var(--pv-green-bright); margin-bottom: 1rem; }
+.subscribe-section p { max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--pv-green); color: var(--pv-black);
+  padding: 1rem 1.8rem; font-family: 'Bebas Neue'; font-size: 1.15rem;
+  letter-spacing: 0.16em; border-radius: var(--radius-pill);
+  cursor: pointer; border: 2px solid transparent;
+  transition: all 0.2s ease; text-decoration: none;
+  box-shadow: 0 6px 22px rgba(131, 180, 55, 0.35);
+}
+.btn-primary:hover { background: var(--pv-green-bright); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(131,180,55,0.5); }
+
+/* ===== SPONSORS ===== */
+.sponsor-strip { background: var(--pv-black); border-top: 4px solid var(--pv-green); }
+.sponsor-strip h3 { text-align: center; color: var(--pv-green-bright); margin-bottom: 0.4rem; }
+.sponsor-strip-sub { text-align: center; font-family: 'Bebas Neue'; letter-spacing: 0.2em; color: var(--pv-cream); margin-bottom: 2.5rem; font-size: 1rem; }
+.sponsor-strip-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem; max-width: 1100px; margin: 0 auto;
+}
+.sponsor-strip-grid a {
+  background: transparent; border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: var(--shadow-soft); transition: transform 0.2s;
+}
+.sponsor-strip-grid a:hover { transform: translateY(-4px); }
+.sponsor-strip-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--pv-ink); border-top: 4px solid var(--pv-green); padding: 3rem 0 2.2rem; color: var(--pv-gray); }
+.footer-grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-brand { display: flex; align-items: center; gap: 1rem; }
+.footer-logo { width: 56px; }
+.footer-links { display: flex; gap: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 0.2em; font-size: 0.95rem; }
+.footer-links a { color: var(--pv-cream); transition: color 0.15s; }
+.footer-links a:hover { color: var(--pv-green-bright); }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="live-nav">
+  <a href="https://pepevault.lol" class="live-nav-brand">
+    <img src="https://pub.hyperagent.com/api/published/pbf01KRSD8816_X90J95C9MRF1JMR6/pepevault-logo.svg" alt="PepeVault">
+  </a>
+  <div class="live-nav-right">
+    <span class="onair-badge offair" id="onairBadge">OFF AIR</span>
+    <a href="https://pepevault.lol" class="live-back">← Back to PepeVault</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="live-hero">
+  <div class="live-hero-bg"></div>
+  <div class="container live-hero-content">
+    <p class="eyebrow">📡 PEPEVAULT · LIVE TRANSMISSION INCOMING</p>
+    <h1>STREAMING<br><span class="accent">SOON</span></h1>
+    <p class="live-hero-sub">Live from PEPEX PRAGUE · Cross Club basement · June 11, 2026 · 21:00 CET. The 600000000000.com warmup. 18 verified Pepe artists. Raw industrial chaos. The Vault unlocked.</p>
+
+    <!-- Countdowns -->
+    <div class="countdowns-grid">
+      <div class="countdown-card">
+        <p class="countdown-label">⚡ NFC LISBON · IN-PERSON ONLY</p>
+        <p class="countdown-date">JUNE 4 · 2026 · 10:00 CET</p>
+        <div class="countdown-clock" data-target="2026-06-04T08:00:00Z">
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">DAYS</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">HOURS</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">MIN</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">SEC</span></div>
+        </div>
+      </div>
+
+      <div class="countdown-card countdown-primary">
+        <p class="countdown-label">📡 PEPEX PRAGUE · STREAM TARGET</p>
+        <p class="countdown-date">JUNE 11 · 2026 · 21:00 CET</p>
+        <div class="countdown-clock" data-target="2026-06-11T19:00:00Z" data-primary="true">
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">DAYS</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">HOURS</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">MIN</span></div>
+          <div class="unit"><span class="unit-num">--</span><span class="unit-label">SEC</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STREAM PLAYER PLACEHOLDER ===== -->
+<section class="section stream-section" id="stream">
+  <div class="container">
+    <p class="eyebrow center" style="text-align: center;">The Stream</p>
+    <h2>PEPEVAULT TV</h2>
+    <p class="stream-sub">When the basement opens, we're on.</p>
+    <div class="stream-player">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KRSNYVTA_4NCQFN104VV9K9P7/live-offline.png" alt="Stream offline — see you June 11">
+    </div>
+    <p class="stream-note">★ Bookmark this page. Refresh on June 11 at 21:00 CET. The stream embed drops in this player the moment we go live. ★</p>
+  </div>
+</section>
+
+<!-- ===== WHAT TO EXPECT ===== -->
+<section class="section expect-section">
+  <div class="container-narrow">
+    <p class="eyebrow center" style="text-align: center;">When We Go Live</p>
+    <h2>RAW INDUSTRIAL CHAOS</h2>
+    <p class="expect-sub">What you'll see on the broadcast.</p>
+    <ul class="expect-list">
+      <li>Live AV performance — Rare Scrilla confirmed, more TBA</li>
+      <li>All 18 verified Pepe artists projected on screen</li>
+      <li>Bitcoin Stamps lineage represented (Not Zeno, Logik, Arwyn)</li>
+      <li>On-chain Counterparty + Stamps feeds in real time</li>
+      <li>Kinetic scrap-metal venue — Cross Club basement</li>
+      <li>Live chat + Frog Army community Telegram</li>
+      <li>The 600000000000.com party warmup</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SUBSCRIBE / FOLLOW ===== -->
+<section class="section subscribe-section">
+  <div class="container-narrow">
+    <p class="eyebrow" style="display: inline-block;">Get The Drop Link</p>
+    <h2>BE NOTIFIED</h2>
+    <p>The stream URL drops on <strong style="color: var(--pv-green-bright);">@PepeVault1</strong> thirty minutes before we go live. Follow to catch it.</p>
+    <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer" class="btn-primary">⚡ Follow @PepeVault1</a>
+  </div>
+</section>
+
+<!-- ===== SPONSORS ===== -->
+<section class="section sponsor-strip">
+  <div class="container">
+    <h3>BROUGHT TO YOU BY</h3>
+    <p class="sponsor-strip-sub">Real lore stewards. They keep this thing alive.</p>
+    <div class="sponsor-strip-grid">
+      <a><img src="https://pub.hyperagent.com/api/published/pbf01KRSD8AZH_7KT2X8NXXS8H8TGE/thanks-fakerares.png" alt="Thank you FAKERARES"></a>
+      <a><img src="https://pub.hyperagent.com/api/published/pbf01KRSD8BD6_YZJSNRHPYGP5FBHQ/thanks-notable-pepes.png" alt="Thank you Notable Pepes"></a>
+      <a><img src="https://pub.hyperagent.com/api/published/pbf01KRSD8C6P_8K9M8F788JYK27EY/thanks-northern-satoshi.png" alt="Thank you Northern Satoshi"></a>
+      <a><img src="https://pub.hyperagent.com/api/published/pbf01KRSD8CMB_ABK603HCFRABEEDZ/thanks-stampchain.png" alt="Thank you Stampchain"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="footer-logo" src="https://pub.hyperagent.com/api/published/pbf01KRSD8816_X90J95C9MRF1JMR6/pepevault-logo.svg" alt="PepeVault">
+        <p style="font-size: 0.95rem; line-height: 1.5;">&copy; 2026 PEPEVAULT LIVE<br>Real assets. Real artists. Real chaos.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://pepevault.lol">← Main Site</a>
+        <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@PepeVault1</a>
+        <a href="mailto:hello@pepevault.lol">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============================================================
+//   COUNTDOWN — ticks every second toward each target date
+// ============================================================
+function updateCountdowns() {
+  const now = Date.now();
+  const pragueTarget = new Date('2026-06-11T19:00:00Z').getTime();
+  const onAirBadge = document.getElementById('onairBadge');
+
+  document.querySelectorAll('.countdown-clock').forEach(clock => {
+    const target = new Date(clock.dataset.target).getTime();
+    const diff = target - now;
+    const units = clock.querySelectorAll('.unit-num');
+    const isPrimary = clock.dataset.primary === 'true';
+
+    if (diff <= 0) {
+      // For Prague: show LIVE NOW. For Lisbon: show ENDED after 3 days.
+      if (isPrimary) {
+        // Stream is "live" within 4-hour window after the start
+        if (diff > -4 * 3600 * 1000) {
+          clock.outerHTML = '<div class="countdown-clock live-now">⚡ LIVE NOW · WATCH BELOW ⚡</div>';
+          if (onAirBadge) { onAirBadge.classList.remove('offair'); onAirBadge.textContent = 'ON AIR'; }
+        } else {
+          clock.outerHTML = '<div class="countdown-clock ended">★ TRANSMISSION ENDED · REPLAY ON @PEPEVAULT1 ★</div>';
+        }
+      } else {
+        // Lisbon: ENDED after 3-day span (4-6 June)
+        if (diff > -3 * 86400 * 1000) {
+          clock.outerHTML = '<div class="countdown-clock live-now">⚡ LISBON LIVE NOW ⚡</div>';
+        } else {
+          clock.outerHTML = '<div class="countdown-clock ended">★ LISBON ENDED · NEXT UP PRAGUE ★</div>';
+        }
+      }
+      return;
+    }
+
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    const values = [days, hours, mins, secs];
+
+    units.forEach((u, i) => {
+      u.textContent = String(values[i]).padStart(2, '0');
+    });
+  });
+}
+
+updateCountdowns();
+setInterval(updateCountdowns, 1000);
+</script>
+
+</body>
+</html>
