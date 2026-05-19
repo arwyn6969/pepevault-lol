@@ -51,17 +51,44 @@ The HTML files are self-contained (no build step, no node_modules, no framework)
 
 ---
 
-## 2. ASSET URLS — TWO OPTIONS
+## 2. MEDIA HOSTING — PICK YOUR PATH
 
-**The HTML currently references images at `https://pub.hyperagent.com/api/published/...` URLs.** Those URLs are stable and will keep working after you deploy — **so the simplest deploy is: upload the HTML files, point the domain, ignore the `/media/` folder, ship.**
+The 38 image and video assets the site references **are not committed to the GitHub repo**. They live in two places:
 
-If you'd rather self-host all media (recommended for long-term portability and to remove Hyperagent's CDN from the loop):
+- **Google Drive (canonical archive)**: https://drive.google.com/drive/folders/1IycNzkSvBxlYTE1Qev5eZyB5wBFhpCRz — in the `/media/` subfolder. This is the source-of-truth bundle.
+- **`pub.hyperagent.com` (current CDN)**: The HTML files reference these URLs directly. They're stable and continue to work after deploy.
 
-1. Upload the contents of `/media/` to your host alongside the HTML
-2. Run a global find-and-replace across the HTML files swapping every `https://pub.hyperagent.com/api/published/[id]/[filename]` URL for `/media/[filename]`
-3. Test that all images, videos, and the lineup poster load
+**Why media isn't in the repo:** Git is built for source code, not large binaries. Co-locating ~70MB of media in the repo would bloat history forever, slow down clones, and make diffs meaningless. Standard production practice is to host static media on a CDN or object storage and reference it from the HTML.
 
-Asset categories (38 total):
+### Three deployment paths — pick the one that fits
+
+**Path 1 (fastest — ~5 minutes): Deploy as-is, media stays on `pub.hyperagent.com`**
+1. Clone the GitHub repo
+2. Rename HTML files per Section 3 Step C
+3. Deploy to Cloudflare Pages / Vercel / Netlify
+4. Done. Media loads from `pub.hyperagent.com`.
+
+**Path 2 (recommended — ~30 minutes): Self-host media alongside the HTML**
+1. Clone the GitHub repo
+2. Download the `/media/` folder from the [Drive folder](https://drive.google.com/drive/folders/1IycNzkSvBxlYTE1Qev5eZyB5wBFhpCRz) and place it in the repo root
+3. Run a find-and-replace across the HTML files: every `https://pub.hyperagent.com/api/published/[id]/[filename]` → `/media/[filename]` (the search strings are unique enough that this is safe)
+4. Optionally also update `gateway.irys.xyz/...` for the PEPORACLE preview if you want to self-host that too
+5. Commit the `/media/` folder + URL rewrites to the repo
+6. Deploy
+
+**Path 3 (most production-grade — ~1 hour): Host media on dedicated object storage / CDN**
+1. Pick a host: Cloudflare R2, Cloudflare Images, Vercel Blob, AWS S3 + CloudFront, etc.
+2. Upload all media from the [Drive folder](https://drive.google.com/drive/folders/1IycNzkSvBxlYTE1Qev5eZyB5wBFhpCRz)/`media/` to your chosen host
+3. Find-and-replace the `pub.hyperagent.com` URLs in the HTML for your new CDN URLs
+4. Commit URL changes to the repo
+5. Deploy
+6. (Optional) Set up image transformation / responsive sizes via the CDN's image optimizer
+
+Path 2 is the most balanced — the repo stays portable, the deployer owns the media, no third-party CDN dependency.
+
+### Asset inventory (38 files)
+
+All categories (38 total):
 - **Brand**: `pepevault-logo.svg` (used as logo + favicon + footer mark + follow-card avatar)
 - **Hero**: `hero-cover.jpg` (OG image + hero background)
 - **Lineup poster**: `lineup-poster-v4.png` (vivid painted festival poster with all 3 events listed)

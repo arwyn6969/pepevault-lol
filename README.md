@@ -2,9 +2,18 @@
 
 Source code for the **[PepeVault](https://pepevault.lol)** traveling Pepe lore exhibition microsite.
 
-## What is this?
+## Two-part deliverable
 
-PepeVault is a curated travelling exhibition that surfaces the real on-chain Pepe lineage — **Rare Pepes · FAKERARES · Notable Pepes · Bitcoin Stamps** — across two cities and three nights in June 2026:
+This project ships in two places:
+
+1. **This GitHub repo** — source code: HTML, CSS, JS (inline), markdown docs, tweet pack
+2. **[Google Drive folder](https://drive.google.com/drive/folders/1IycNzkSvBxlYTE1Qev5eZyB5wBFhpCRz)** — canonical media bundle: 38 image and video assets (logo, posters, key art, spotlight cards, hype reels)
+
+**Why split?** Git is built for source code, not binaries. Co-locating 70MB of media in this repo would bloat history forever. Standard production practice is to host static media on a CDN / object storage and reference it from the HTML. See `PEPEVAULT-HANDOFF.md` Section 2 for the three deployment paths.
+
+## What is PepeVault?
+
+A curated travelling exhibition that surfaces the real on-chain Pepe lineage — **Rare Pepes · FAKERARES · Notable Pepes · Bitcoin Stamps** — across two cities and three nights in June 2026:
 
 - 📍 **NFC LISBON** · Jun 4–6 · Unicorn Factory Lisboa
 - 🟢 **STAMPFEST 3 · The Flock Party** · sponsored by Stampchain.io · secret Lisbon location
@@ -25,7 +34,7 @@ pepevault-lol/
 └── v30-backup/                    ← pre-v31 snapshots (rollback safety)
 ```
 
-**Media assets** (logo, lineup poster, key art, spotlight cards, hype reels, etc.) currently load from `pub.hyperagent.com` URLs referenced inside the HTML. Those URLs are stable. If you want to self-host the media, see Section 2 of `PEPEVAULT-HANDOFF.md`.
+**Media assets** load from `pub.hyperagent.com` URLs inside the HTML. Those URLs are stable. To self-host the media, download the `/media/` folder from the [Drive folder](https://drive.google.com/drive/folders/1IycNzkSvBxlYTE1Qev5eZyB5wBFhpCRz) and follow Path 2 or Path 3 in `PEPEVAULT-HANDOFF.md` Section 2.
 
 ## Deploying
 
