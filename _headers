@@ -1,0 +1,36 @@
+# Cloudflare Pages headers — pepevault.lol
+# See PRD .taskmaster/docs/active/pepevault-lol-cloudflare-launch-prd.md Phase 6.2
+#
+# CSP rationale: site uses extensive inline JS (artist modals, countdown, easter
+# egg gallery, BTC click-to-copy) and inline CSS — 'unsafe-inline' is required
+# until a build step is added. External sources are individually allow-listed
+# per feature: media (R2), Twitter widgets, Manifold mint widgets, Arweave
+# (PEPORACLE iframe), OpenStreetMap (venue maps), unavatar (X profile pics).
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), accelerometer=(), gyroscope=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://platform.twitter.com https://cdn.syndication.twimg.com https://connect.manifoldxyz.dev https://claims.manifoldxyz.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://platform.twitter.com https://connect.manifoldxyz.dev https://claims.manifoldxyz.dev; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://media.pepevault.lol https://gateway.irys.xyz https://unavatar.io https://*.twimg.com https://syndication.twitter.com https://platform.twitter.com https://*.tile.openstreetmap.org; media-src 'self' https://media.pepevault.lol; frame-src 'self' https://*.arweave.net https://platform.twitter.com https://syndication.twitter.com https://www.openstreetmap.org https://*.openstreetmap.org https://connect.manifoldxyz.dev https://claims.manifoldxyz.dev https://embed.manifold.xyz; connect-src 'self' https://platform.twitter.com https://api.manifoldxyz.dev https://*.manifoldxyz.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  X-DNS-Prefetch-Control: on
+
+# HTML pages — short cache, revalidate (allows quick content updates)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static favicon (svg from R2 is the canonical, but fallback for any local)
+/favicon.ico
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# robots.txt + sitemap.xml — daily revalidate
+/robots.txt
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400, must-revalidate
