@@ -1,0 +1,18 @@
+# Cloudflare Pages configuration for pepevault.lol
+#
+# Pure static site (HTML + inline CSS/JS, no build step).
+# Files live at repo root and are served as-is.
+#
+# Deploy via:
+#   npx wrangler pages deploy . --project-name pepevault-lol
+#
+# Custom domain bind (pepevault.lol + www.pepevault.lol) lives in CF Pages
+# dashboard / Pages API — not in this file.
+#
+# Media assets (38 files) are NOT served by Pages — they live in the R2 bucket
+# 'pepevault-media' behind the custom subdomain media.pepevault.lol. See PRD
+# Phase 2 + .taskmaster/docs/active/pepevault-lol-cloudflare-launch-prd.md.
+
+name = "pepevault-lol"
+pages_build_output_dir = "."
+compatibility_date = "2026-05-20"
