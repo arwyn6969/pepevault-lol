@@ -56,7 +56,7 @@
         }
       },
       "image": "https://media.pepevault.lol/nfc-lisbon-keyart.webp",
-      "description": "PepeVault activation at NFC Summit 2026 — third-floor gallery integrated with old machinery in a historic flour mill. 18 verified Pepe artists across Rare Pepes, FAKERARES, Notable Pepes, and Bitcoin Stamps.",
+      "description": "PepeVault activation at NFC Summit 2026 — third-floor gallery integrated with old machinery in a historic flour mill. 27 verified Pepe artists across Rare Pepes, FAKERARES, Notable Pepes, and Bitcoin Stamps.",
       "organizer": {
         "@type": "Organization",
         "name": "PepeVault",
@@ -427,6 +427,58 @@ p { max-width: 70ch; }
   font-family: 'Bebas Neue'; font-size: 0.85rem; letter-spacing: 0.12em;
   color: var(--pv-green-dark); border-top: 1px solid rgba(0,0,0,0.12); padding-top: 0.6rem;
 }
+
+/* ===== FEATURED EXHIBITION CARD (Kaleidoscope) ===== */
+.artist-card.featured {
+  grid-column: span 2;
+  flex-direction: row;
+  background: linear-gradient(135deg, #161812 0%, #2a2e1e 50%, #161812 100%);
+  color: var(--pv-cream);
+  border: 2px solid var(--pv-green);
+  min-height: 280px;
+  position: relative;
+  box-shadow: 0 12px 36px rgba(131,180,55,0.18), 0 0 0 1px rgba(131,180,55,0.12);
+}
+.artist-card.featured::before {
+  content: "★ FEATURED EXHIBITION PARTNER ★";
+  position: absolute; top: 0.6rem; left: 50%; transform: translateX(-50%);
+  background: var(--pv-green); color: var(--pv-black);
+  font-family: 'Bebas Neue'; font-size: 0.72rem; letter-spacing: 0.22em;
+  padding: 0.22rem 0.9rem; border-radius: var(--radius-pill);
+  z-index: 3; white-space: nowrap;
+}
+.artist-card.featured:hover { box-shadow: 0 18px 50px rgba(131,180,55,0.3), 0 0 0 1px rgba(131,180,55,0.25); }
+.artist-card.featured .ac-img {
+  width: 260px; height: auto; aspect-ratio: 1 / 1; flex-shrink: 0;
+  background: var(--pv-black);
+  border-right: 1px solid rgba(131,180,55,0.3);
+}
+.artist-card.featured .ac-img img { object-fit: contain; padding: 1.5rem; background: #0d0e0a; }
+.artist-card.featured .ac-tag {
+  display: none; /* hidden — the ::before banner replaces it */
+}
+.artist-card.featured .ac-body { padding: 2.2rem 2rem 1.8rem; color: var(--pv-cream); }
+.artist-card.featured .ac-name {
+  color: var(--pv-green-bright); font-size: 2.6rem; letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(131,180,55,0.25);
+}
+.artist-card.featured .ac-handle { color: rgba(245, 240, 224, 0.78); font-size: 1rem; }
+.artist-card.featured .ac-desc { color: var(--pv-cream); font-size: 1.02rem; line-height: 1.6; }
+.artist-card.featured .ac-meta {
+  color: var(--pv-green-bright);
+  border-top-color: rgba(131, 180, 55, 0.3);
+  font-size: 0.92rem; letter-spacing: 0.16em;
+}
+@media (max-width: 880px) {
+  .artist-card.featured {
+    grid-column: span 1; flex-direction: column; min-height: auto;
+  }
+  .artist-card.featured .ac-img {
+    width: 100%; border-right: none; border-bottom: 1px solid rgba(131,180,55,0.3);
+  }
+  .artist-card.featured .ac-name { font-size: 2.2rem; }
+}
+
 .roster-note {
   margin-top: 2.5rem; text-align: center; font-family: 'Bebas Neue';
   letter-spacing: 0.2em; color: var(--pv-green-bright); font-size: 1rem;
@@ -1098,10 +1150,7 @@ p { max-width: 70ch; }
   transform: rotate(-45deg); box-shadow: 0 4px 14px rgba(131,180,55,0.5);
 }
 .pv-pin::after { content: ''; position: absolute; top: 5px; left: 5px; width: 16px; height: 16px; border-radius: 50%; background: var(--pv-black); }
-.twitter-timeline-wrap { margin-top: 1.5rem; max-width: 100%; }
-.twitter-timeline-wrap iframe { border-radius: 12px !important; }
 </style>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -1186,7 +1235,7 @@ p { max-width: 70ch; }
         <p class="eyebrow">The Superstars</p>
         <h2>VERIFIED PEPE ARTISTS<br>ACROSS THE LORE</h2>
       </div>
-      <div class="roster-count">18<span class="sub">verified — more added regularly</span></div>
+      <div class="roster-count">27<span class="sub">verified — more added regularly</span></div>
     </div>
     <div class="roster-grid" id="rosterGrid"></div>
     <p class="roster-note">▸ Profiles built from primary sources only — X profiles, pepe.wtf, verified personal sites. No AI portraits. No fabricated bios. ◂</p>
@@ -1255,12 +1304,7 @@ p { max-width: 70ch; }
           <span class="meta-pill">Bitcoin</span>
           <span class="meta-pill">by @ditacrypto</span>
         </div>
-        <iframe
-          src="https://zsepczbet4eztlmp2jyf6eonxmwtj7wr33wwdymkfrzwz5grie5a.arweave.net/zIjxZCSfCZmtj9JwXxHNuy00_tHe7WHhiixzbPTRQTo"
-          title="PEPORACLE — interactive Bitcoin oracle by DITACRYPTO"
-          loading="lazy"
-          allowfullscreen
-          style="width:100%;min-height:600px;border:0;border-radius:8px;background:var(--pv-black);margin:1rem 0;"></iframe>
+        <a class="collectible-cta secondary-cta" href="https://zsepczbet4eztlmp2jyf6eonxmwtj7wr33wwdymkfrzwz5grie5a.arweave.net/zIjxZCSfCZmtj9JwXxHNuy00_tHe7WHhiixzbPTRQTo" target="_blank" rel="noopener noreferrer">🔮 EXPERIENCE THE ORACLE →</a>
         <a class="collectible-cta secondary-link" href="https://cp20.tokenscan.io/asset/PEPORACLE" target="_blank" rel="noopener noreferrer">📜 View Counterparty Asset →</a>
       </article>
 
@@ -1532,7 +1576,7 @@ p { max-width: 70ch; }
       <div class="sponsor-cta-content">
         <p class="sponsor-cta-eyebrow">★ OPEN POSITIONS · LORE PARTNERS</p>
         <h3>BACK THE VAULT.</h3>
-        <p>Three nights locked for 2026 — Lisbon by day, Stampfest after dark, Prague to close it out. 18 verified Pepe artists across the lore. Cross-curations with NFC Summit Lisbon and BTC Prague week. Help us keep on-chain Pepe culture loud.</p>
+        <p>Three nights locked for 2026 — Lisbon by day, Stampfest after dark, Prague to close it out. 27 verified Pepe artists across the lore. Cross-curations with NFC Summit Lisbon and BTC Prague week. Help us keep on-chain Pepe culture loud.</p>
         <ul class="sponsor-cta-perks">
           <li>Logo on every site &amp; press kit</li>
           <li>Featured billing on lineup posters</li>
@@ -1577,9 +1621,6 @@ p { max-width: 70ch; }
             <li>★ Live coverage from Prague</li>
             <li>★ Lore drops + community calls</li>
           </ul>
-        </div>
-        <div class="twitter-timeline-wrap">
-          <a class="twitter-timeline" data-theme="dark" data-tweet-limit="5" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/pepevault1?ref_src=twsrc%5Etfw">Tweets by @pepevault1</a>
         </div>
       </div>
     </div>
@@ -1670,11 +1711,12 @@ document.getElementById('navToggle')?.addEventListener('click', () => {
 })();
 
 const roster = [
+  { name: "KALEIDOSCOPE XCP", handle: "curated by @nathansonic", xUrl: "https://x.com/nathansonic", pepeWtf: "https://kaleidoscopexcp.net", desc: "Featured exhibition partner — a black-market gallery of Counterparty assets curated by Nathan Sonic. 1,977 digital tokens deep. Joining PepeVault across Lisbon and Prague.", richDesc: "Kaleidoscope XCP is a black-market gallery of Counterparty assets curated by Nathan Sonic. 1,977 digital tokens deep, Kaleidoscope reads like a back-alley directory of every chain-permanent asset that matters. PepeVault is honored to feature Kaleidoscope as an exhibition partner across both Lisbon and Prague — the gallery comes to the exhibition.", collection: "FEATURED EXHIBITION PARTNER · 1,977 COUNTERPARTY ASSETS · CURATED BY NATHAN SONIC", img: "https://cdn.sanity.io/images/49w4m06h/production/7eb498f1717d410ab4007050f52ffffa7b9a4676-196x196.png", tag: "★ FEATURED EXHIBITION", featured: true },
   { name: "RARE SCRILLA", handle: "@ScrillaVentura", xUrl: "https://x.com/ScrillaVentura", pepeWtf: "https://pepe.wtf/artists/Rare-Scrilla", spotlight: "https://media.pepevault.lol/spotlight-rare-scrilla.webp", desc: "Hip-hop artist + visual artist. 30 Rare Pepes including the Hip-Hop Elements series. The DJ Pepe character is his creation.", richDesc: "Multidisciplinary hip-hop artist and visual designer. Created the DJPEPE character — the first music digital collectible in history (Oct 13 2016). 30+ Rare Pepes including the Hip-Hop Elements series. Foundational voice of the Counterparty Pepe movement.", collection: "RARE PEPES · FAKERARES · NOTABLES", img: "https://unavatar.io/x/ScrillaVentura", tag: "Originals" },
   { name: "DESULTOR", handle: "@desultor", xUrl: "https://x.com/desultor", pepeWtf: "https://pepe.wtf/artists/desultor", spotlight: "https://media.pepevault.lol/spotlight-desultor.webp", desc: "Multidisciplinary, physical × digital. PEPESCIENTST, MONEYPRINTR, BIGTIMEWOW. Guardian of Pepe authenticity.", richDesc: "Multidisciplinary artist working across physical and digital. Best known for PEPESCIENTST — a lab-coated Pepe alchemist that became one of the most iconic Fake Rares. Guardian of Pepe authenticity through hand-painted and digital work.", collection: "FAKERARES · COMMONS · NOTABLES", img: "https://unavatar.io/x/desultor", tag: "Lore" },
   { name: "ZED ERWAN", handle: "@Zederwan", xUrl: "https://x.com/Zederwan", pepeWtf: "https://pepe.wtf/artists/Zed-Erwan", spotlight: "https://media.pepevault.lol/spotlight-zed-erwan.webp", desc: "Pepemaximalist. Watercolor + digital coloring, comic-strip lineage. Complete Series 34 (12 cards) sold at Sotheby's 2025.", richDesc: "French-Belgian comic-strip artist working in watercolor and digital. Self-described Pepemaximalist. His complete Rare Pepes Series 34 (12 cards) was sold as a curated set at Sotheby's in 2025 — a milestone moment for the lore.", collection: "RARE PEPES — Series 34", img: "https://unavatar.io/x/Zederwan", tag: "Originals" },
   { name: "MR. HANSEL", handle: "@bettidlomas", xUrl: "https://x.com/bettidlomas", pepeWtf: "https://pepe.wtf/artists/Mr-Hansel", spotlight: "https://media.pepevault.lol/spotlight-mr-hansel.webp", desc: "Quietly legendary. 31 verified Rare Pepes including the Mr. Hansel Triptych. Famous within the lore for refusing to sell.", richDesc: "Fairytale digital painter. 31 verified Rare Pepes including the famed Mr. Hansel Triptych. Legendary within the community for refusing to sell — keeping the keys to the grave.", collection: "RARE PEPES", img: "https://unavatar.io/x/bettidlomas", tag: "Originals" },
-  { name: "MICHAEL NAPLES", handle: "@MichaelNaples", xUrl: "https://x.com/MichaelNaples", pepeWtf: "https://pepe.wtf/artists/Michael-Naples", spotlight: "https://media.pepevault.lol/spotlight-michael-naples.webp", desc: "American oil painter merging physical and digital. The Renaissance Rares — Pepes in classical portrait painting style, each tokenized as a Fake Rare.", richDesc: "American oil painter merging physical and digital. The Renaissance Rares — 21 Pepes painted in classical portrait style on oil-on-board, each one tokenized as a Fake Rare on Counterparty.", collection: "FAKERARES · Renaissance Rares", img: "https://unavatar.io/x/MichaelNaples", tag: "Lore" },
+  { name: "MICHAEL NAPLES", handle: "@MichaelNaples", xUrl: "https://x.com/MichaelNaples", pepeWtf: "https://pepe.wtf/artists/Michael-Naples", spotlight: "https://media.pepevault.lol/spotlight-michael-naples.webp", desc: "Oil painter blending traditional fine art with digital collectibles. A refined painter's hand applied to Pepe art on Counterparty — one of the earliest movements in crypto art history.", richDesc: "NAPLES is an oil painter known for blending traditional fine art with digital collectibles. His work brings a refined painter's hand to subjects rooted in memes, nostalgia and modern culture. He's known for making Pepe art on Counterparty, contributing to one of the earliest and most recognizable movements in crypto art history. Through bold color, sharp composition and a deep respect for his craft, NAPLES creates work that feels timeless, playful and unmistakably connected to the Bitcoin art ecosystem.", collection: "FAKERARES · Renaissance Rares", img: "https://unavatar.io/x/MichaelNaples", tag: "Lore" },
   { name: "NATHAN SONIC", handle: "@nathansonic", xUrl: "https://x.com/nathansonic", pepeWtf: "https://pepe.wtf/artists/Nathan-Sonic", spotlight: "https://media.pepevault.lol/spotlight-nathan-sonic.webp", desc: "Founder of Kaleidoscope XCP (2018). Generative code art, ASCII animation, type design. Multi-collection roster spans Rare Pepes, Fake Rares, Bitcoin Stamps.", richDesc: "Founder of Kaleidoscope XCP (2018). Generative code artist working in ASCII animation, type design, and creative computing. Multi-collection roster spanning Rare Pepes, Fake Rares, Bitcoin Stamps, and his own Kaleidoscope drops.", collection: "RARE PEPES · FAKERARES · STAMPS · KALEIDOSCOPE", img: "https://unavatar.io/x/nathansonic", tag: "Lore" },
   { name: "EASY B", handle: "@Easy_to_the_b", xUrl: "https://x.com/Easy_to_the_b", pepeWtf: "https://pepe.wtf/artists/Easy-B", spotlight: "https://media.pepevault.lol/spotlight-easy-b.webp", desc: "Comics, anime, movies, vintage toys → iconic art and memes. Digital, painting, prints, and custom toys. Across Rare Pepes, Fake Rares, Fake Commons, Bitcorns, Wojak Way + more.", richDesc: "Easy B takes influence from comics, anime, movies, and vintage toys, which helps to shape the visual style when creating his iconic art and memes. Whether through digital art, painting, prints, or custom toys, EASY B continues to build a universe fueled by pop culture obsession, loud visuals, and unapologetic fun. His creations can be found in Rare Pepes, Fake Rares, Fake Commons, Bitcorns, The Wojak Way, and a few other collections.", collection: "RARE PEPES · FAKE RARES · FAKE COMMONS · BITCORNS · WOJAK WAY", img: "https://media.pepevault.lol/profile-easy-b.webp", tag: "Originals" },
   { name: "DJ PEPE", handle: "@DJPEPE_", xUrl: "https://x.com/DJPEPE_", pepeWtf: "https://pepe.wtf/asset/DJPEPE", spotlight: "https://media.pepevault.lol/spotlight-dj-pepe.webp", desc: "The DJPEPE character — performance-art persona created by Rare Scrilla. Widely cited as the first music digital collectible (Oct 13 2016). The token speaks for itself.", richDesc: "The DJPEPE character — performance-art persona created by Rare Scrilla. Widely cited as the first music digital collectible in history (Oct 13 2016 · Series 4 Card 29). The token speaks for itself.", collection: "RARE PEPES — S4 C29", img: "https://unavatar.io/x/DJPEPE_", tag: "Persona · by Scrilla" },
@@ -1687,7 +1729,16 @@ const roster = [
   { name: "FABOOOWY", handle: "@fabooowy", xUrl: "https://x.com/fabooowy", pepeWtf: "https://pepe.wtf/artists/fabooowy", spotlight: "https://media.pepevault.lol/spotlight-fabooowy.webp", desc: "Sci-Fi Pepe artist. Cosmic Pepe scenes, UFO lore, vivid digital painting.", richDesc: "Sci-fi Pepe artist working in vivid digital illustration. Cosmic Pepes, flying-saucer lore, otherworldly scenes. Bringing alien-frog energy to the Vault.", collection: "FAKERARES · COSMIC PEPE LORE", img: "https://unavatar.io/x/fabooowy", tag: "Lore" },
   { name: "NINA ROEHRS", handle: "@NinaRoehrs", xUrl: "https://x.com/NinaRoehrs", pepeWtf: "https://pepe.wtf/artists/NNIA", spotlight: "https://media.pepevault.lol/spotlight-nina-roehrs.webp", desc: "Curator + producer. Bridging physical exhibition with on-chain culture.", richDesc: "Curator and producer working at the intersection of physical exhibition and on-chain culture. PepeVault collaborator. Bio details pending direct confirmation.", collection: "CURATORIAL · LORE STEWARDSHIP", img: "https://unavatar.io/x/NinaRoehrs", tag: "Curator" },
   { name: "LOGIK", handle: "@Logik185", xUrl: "https://x.com/Logik185", pepeWtf: "https://pepe.wtf/artists/Logik", spotlight: "https://media.pepevault.lol/spotlight-logik.webp", desc: "Breaking the boundaries of immutable on-chain art storage with his work on Bitcoin Stamps. Counterparty + Pepe lineage.", richDesc: "Bitcoin Stamps artist pushing the boundaries of what immutable on-chain art storage can be. Logik's work explores how permanent, censorship-resistant images live when burned directly into Bitcoin transaction data — and how that medium changes what Pepe lore can do. Active across the Counterparty Pepe lineage too.", collection: "BITCOIN STAMPS · COUNTERPARTY · PEPE LINEAGE", img: "https://unavatar.io/x/Logik185", tag: "Stamps" },
-  { name: "ARWYN", handle: "@arwyn_official", xUrl: "https://x.com/arwyn_official", pepeWtf: "https://kaleidoscopexcp.net/artist/Arwyn", spotlight: "https://media.pepevault.lol/spotlight-arwyn.webp", desc: "Co-founder of Bitcoin Stamps. Kaleidoscope XCP artist. 116+ Counterparty assets. Prolific FLOONEYBIN contributor.", richDesc: "Co-founder of Bitcoin Stamps — the protocol that burns art permanently and immutably into Bitcoin transaction data itself. Also a Kaleidoscope XCP artist with 116+ Counterparty assets to her name, and a prolific contributor to the FLOONEYBIN extended universe (MDRNFLOONEY, FLOONEYASHI, FLOONEYBOSHI, FRISBEEGRAB.FLOONEYBIN). One of the most prolific on-chain artists in the Vault.", collection: "BITCOIN STAMPS · KALEIDOSCOPE XCP · FAKERARES", img: "https://unavatar.io/x/arwyn_official", tag: "Stamps" }
+  { name: "ARWYN", handle: "@arwyn_official", xUrl: "https://x.com/arwyn_official", pepeWtf: "https://kaleidoscopexcp.net/artist/Arwyn", spotlight: "https://media.pepevault.lol/spotlight-arwyn.webp", desc: "Co-founder of Bitcoin Stamps. Kaleidoscope XCP artist. 116+ Counterparty assets. Prolific FLOONEYBIN contributor.", richDesc: "Co-founder of Bitcoin Stamps — the protocol that burns art permanently and immutably into Bitcoin transaction data itself. Also a Kaleidoscope XCP artist with 116+ Counterparty assets to her name, and a prolific contributor to the FLOONEYBIN extended universe (MDRNFLOONEY, FLOONEYASHI, FLOONEYBOSHI, FRISBEEGRAB.FLOONEYBIN). One of the most prolific on-chain artists in the Vault.", collection: "BITCOIN STAMPS · KALEIDOSCOPE XCP · FAKERARES", img: "https://unavatar.io/x/arwyn_official", tag: "Stamps" },
+  { name: "KANE MAYFIELD", handle: "@KaneMayfield", xUrl: "https://x.com/KaneMayfield", pepeWtf: "https://kanemayfield.com", desc: "Hip-hop artist and FAKERARES creator. Tracks bonded to digital cards on Counterparty.", richDesc: "Hip-hop artist and FAKERARES creator whose tracks become bonded to digital cards on Counterparty. Multiple Scarce.city drops sit at the seam between music and Pepe folklore — proof that the chain remembers when the beat does.", collection: "FAKERARES · MUSIC × COUNTERPARTY", img: "https://unavatar.io/x/KaneMayfield", tag: "Lore" },
+  { name: "SUBTERRANEAN", handle: "@subterranean_1", xUrl: "https://x.com/subterranean_1", pepeWtf: "https://pepe.wtf/artists/subterranean", desc: "Artist, collector and writer working below the FAKERARES surface. Sharp dispatches from the Pepe underground.", richDesc: "Artist, collector and writer working below the FAKERARES surface. Builds quietly across the canon and pens some of the sharpest dispatches from inside the Pepe underground — the chain's anonymous historian.", collection: "FAKERARES · WRITING · ON-CHAIN ARCHIVE", img: "https://unavatar.io/x/subterranean_1", tag: "Lore" },
+  { name: "MIKE IN SPACE", handle: "@mikeinspace", xUrl: "https://x.com/mikeinspace", pepeWtf: "https://stampchain.io", desc: "Co-creator of the Bitcoin Stamps protocol. Holds OG Rare Pepe CHAMPAGNETNT (S25/C38).", richDesc: "Co-creator of the Bitcoin Stamps protocol — the builder who showed the world an immutable artifact stored straight to Bitcoin transactions. Holds OG Rare Pepe CHAMPAGNETNT (Series 25, Card 38). Equal parts engineer, collector, and lore-keeper.", collection: "BITCOIN STAMPS · CO-CREATOR · RARE PEPES", img: "https://unavatar.io/x/mikeinspace", tag: "Stamps" },
+  { name: "DANK FROGLET", handle: "@DANKFROGLET", xUrl: "https://x.com/DANKFROGLET", pepeWtf: "https://pepe.wtf/artists/Regan", desc: "Regan from Dank Rares. Stamp #29. Curates the Dank Directory of pepes, frogs and Bobos on Bitcoin Stamps.", richDesc: "Regan from Dank Rares — the hand behind Dank Rares, the Dank Directory, and Stamp #29. Curates a corner of Bitcoin Stamps where Pepes, frogs, and Bobos all share the chain. Named by Mike In Space as a protocol collaborator.", collection: "BITCOIN STAMPS · DANK RARES · DANK DIRECTORY", img: "https://unavatar.io/x/DANKFROGLET", tag: "Stamps" },
+  { name: "NICOLAS SIERRO", handle: "@NicolasSierro", xUrl: "https://x.com/NicolasSierro", pepeWtf: "https://pepe.wtf/artists/nicolas-sierro", desc: "Swiss painter and OG of the 2016 Counterparty movement. Created PEPETHESOG. Alias: Hilaire de Rien.", richDesc: "Swiss painter and OG of the 2016 Counterparty movement, behind PEPETHESOG and a body of work that helped define what a Rare Pepe could be. Carries the alias Hilaire de Rien through gallery shows and crypto-art history alike — fine-art lineage applied to the original chain.", collection: "RARE PEPES · SWISS PAINTING · OG COUNTERPARTY", img: "https://unavatar.io/x/NicolasSierro", tag: "Originals" },
+  { name: "NIKOLINA PETOLAS", handle: "@NikolinaPetolas", xUrl: "https://x.com/NikolinaPetolas", pepeWtf: "https://nikolinapetolas.com", desc: "Croatian photo-collage and oil-painting artist. FAKERARES: CONTESSAPEPA, CONTEPEPE, FAKESOL, UNTAMED.", richDesc: "Croatian photo-collage and oil-painting artist whose FAKERARES — CONTESSAPEPA, CONTEPEPE, FAKESOL, UNTAMED — read like baroque tableaux folded into the Pepe canon. Exhibited at Pepes in Paris, October 2023. Brings museum-grade composition to the chain.", collection: "FAKERARES · PHOTO-COLLAGE · OIL PAINTING", img: "https://unavatar.io/x/NikolinaPetolas", tag: "Lore" },
+  { name: "MORTYLEN", handle: "@lentymor", xUrl: "https://x.com/lentymor", pepeWtf: "https://stampchain.io/wallet/bc1q3vcapstlk86v2fav7gjrqfg9z9kxu8l8j873gm", desc: "Bitcoin Stamps prolific creator. 480+ stamps. Member of the NSIDirectory team.", richDesc: "Bitcoin Stamps prolific creator with hundreds of stamps to their name and a hand in the NSIDirectory team. Quietly stacks chain-permanent artifacts at a relentless pace — Mortylen's wallet reads like an annotated index of what Stamps can hold.", collection: "BITCOIN STAMPS · NSIDIRECTORY · 480+ STAMPS", img: "https://unavatar.io/x/lentymor", tag: "Stamps" },
+  { name: "BABALICIOUS", handle: "@babalicious_io", xUrl: "https://x.com/babalicious_io", pepeWtf: "https://babalicious.io", desc: "Pseudonymous Bitcoin Stamps artist + stampchain.io collaborator. Builder and dropper across the protocol.", richDesc: "Pseudonymous Bitcoin Stamps artist and deep stampchain.io collaborator, building tools and dropping art across the protocol. Operates from babalicious.io — equal parts art practice and infrastructure work. The chain remembers what they ship.", collection: "BITCOIN STAMPS · STAMPCHAIN COLLABORATOR · INFRASTRUCTURE", img: "https://unavatar.io/x/babalicious_io", tag: "Stamps" },
+  { name: "MEME CONSCIOUS", handle: "@memeconscious", xUrl: "https://x.com/memeconscious", pepeWtf: "https://pepe.wtf/artists/Meme-Conscious", desc: "Pepe artist threading memetic theory through Counterparty assets. The art does the talking.", richDesc: "Pepe artist whose practice threads memetic theory through Rare Pepe and FAKERARES drops on Counterparty. Public persona only — Meme Conscious lets the work do the talking, leaving lore to the lore-keepers and chain-permanence to the chain.", collection: "RARE PEPES · COUNTERPARTY · MEMETIC THEORY", img: "https://unavatar.io/x/memeconscious", tag: "Originals" }
 ];
 
 const grid = document.getElementById('rosterGrid');
@@ -1696,8 +1747,9 @@ roster.forEach((artist, idx) => {
     ? `<div class="ac-img"><img src="${artist.img}" alt="${artist.name}" loading="lazy"></div>`
     : `<div class="ac-img placeholder"></div>`;
   const tagHtml = artist.tag ? `<span class="ac-tag">${artist.tag}</span>` : '';
+  const featuredClass = artist.featured ? ' featured' : '';
   grid.insertAdjacentHTML('beforeend', `
-    <article class="artist-card" data-artist="${idx}" role="button" tabindex="0" aria-label="View ${artist.name} profile">
+    <article class="artist-card${featuredClass}" data-artist="${idx}" role="button" tabindex="0" aria-label="View ${artist.name} profile">
       ${tagHtml}
       ${imgHtml}
       <div class="ac-body">
@@ -1733,6 +1785,11 @@ roster.forEach((artist, idx) => {
       if (artist.pepeWtf.includes('stampchain.io')) pepeCtaLabel = '⚡ View Wallet on stampchain.io →';
       else if (artist.pepeWtf.includes('kaleidoscopexcp.net')) pepeCtaLabel = '🔮 View Works on Kaleidoscope XCP →';
       else if (artist.pepeWtf.includes('fauxbitcorn.com')) pepeCtaLabel = '🌽 Visit fauxbitcorn.com →';
+      else if (artist.pepeWtf.includes('kanemayfield.com')) pepeCtaLabel = '🎤 Visit kanemayfield.com →';
+      else if (artist.pepeWtf.includes('babalicious.io')) pepeCtaLabel = '⚡ Visit babalicious.io →';
+      else if (artist.pepeWtf.includes('nikolinapetolas.com')) pepeCtaLabel = '🎨 Visit nikolinapetolas.com →';
+      else if (artist.pepeWtf === 'https://stampchain.io') pepeCtaLabel = '⚡ Visit stampchain.io →';
+      else if (artist.pepeWtf === 'https://kaleidoscopexcp.net') pepeCtaLabel = '🔮 Explore Kaleidoscope XCP →';
       else if (artist.pepeWtf.includes('/asset/')) pepeCtaLabel = '🐸 View Asset on pepe.wtf →';
     }
     const pepeCta = artist.pepeWtf
