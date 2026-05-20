@@ -1917,5 +1917,38 @@ roster.forEach((artist, idx) => {
   });
 })();
 </script>
+<script>
+// Lazy-load Manifold widget assets when Hall of Memes scrolls into view (~30 min refactor
+// from eager loading in <head>). Saves ~2.5MB initial JS for visitors who never scroll
+// to the mint card; widget still loads seamlessly for users who do.
+(function(){
+  var target = document.querySelector('[data-widget="m-connect"]');
+  if (!target) return;
+  function injectManifold(){
+    if (window.__pepevaultManifoldLoaded) return;
+    window.__pepevaultManifoldLoaded = true;
+    var head = document.head;
+    [
+      { tag: 'link', rel: 'stylesheet', href: 'https://connect.manifoldxyz.dev/latest/connect.css' },
+      { tag: 'link', rel: 'stylesheet', href: 'https://claims.manifoldxyz.dev/latest/claimComplete.css' },
+      { tag: 'script', src: 'https://connect.manifoldxyz.dev/latest/connect.umd.min.js' },
+      { tag: 'script', src: 'https://claims.manifoldxyz.dev/latest/claimComplete.umd.min.js' }
+    ].forEach(function(spec){
+      var el = document.createElement(spec.tag);
+      if (spec.rel) el.rel = spec.rel;
+      if (spec.href) el.href = spec.href;
+      if (spec.src) { el.src = spec.src; el.async = true; }
+      head.appendChild(el);
+    });
+  }
+  if (!('IntersectionObserver' in window)) { injectManifold(); return; }
+  var io = new IntersectionObserver(function(entries, obs){
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) { injectManifold(); obs.disconnect(); return; }
+    }
+  }, { rootMargin: '400px 0px' });
+  io.observe(target);
+})();
+</script>
 </body>
 </html>
