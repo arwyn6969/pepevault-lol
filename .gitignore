@@ -24,3 +24,12 @@ Thumbs.db
 # Backup snapshots from prior versions live in /v30-backup/ — keep them committed for rollback.
 # If you create your own local backups, name them with _local prefix to be ignored.
 _local_*
+
+# Media staging directories (T3 — Drive bundle download + image optimization).
+# Production media is hosted on R2 at media.pepevault.lol, not in the repo.
+/media-source/
+/media-originals/
+/media-optimized/
+
+# Wrangler local state
+.wrangler/
