@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects — pepevault.lol
+# See PRD .taskmaster/docs/active/pepevault-lol-cloudflare-launch-prd.md Phase 6.2
+#
+# www → apex permanent redirect.
+# `301!` forces the redirect even if the destination path exists at the source.
+
+https://www.pepevault.lol/*  https://pepevault.lol/:splat  301!
+
+# Legacy Hyperagent preview URL paths → home (defensive — anyone with
+# bookmarks from the build sessions lands somewhere useful instead of 404)
+/s/*  /  301
