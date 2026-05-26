@@ -660,8 +660,22 @@ p { max-width: 70ch; }
   box-shadow: 0 12px 36px rgba(14, 15, 12, 0.22);
   border: 3px solid var(--pv-green);
   background: var(--pv-paper-warm);
+  padding: 1.4rem 1.4rem 0.9rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
 }
-.latomonfc-cover img { width: 100%; height: auto; display: block; }
+.latomonfc-cover img {
+  width: 100%; max-width: 420px; height: auto; display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background: var(--pv-paper); border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(14, 15, 12, 0.12);
+}
+.latomonfc-cover-caption {
+  font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.22em;
+  color: var(--pv-green-dark); margin: 0; text-transform: uppercase;
+  text-align: center;
+}
 .latomonfc-body { color: var(--pv-black); }
 .latomonfc-eyebrow {
   font-family: 'Bebas Neue'; font-size: 1.05rem; letter-spacing: 0.25em;
@@ -1432,7 +1446,8 @@ p { max-width: 70ch; }
 
     <div class="latomonfc-grid">
       <div class="latomonfc-cover">
-        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/latomonfc-poap-card.webp" alt="LATOMONFC proof-of-attendance card — hand-illustrated Pepe in a Lisbon street vendor outfit holding a golden medallion, with azulejo tiles and Tram 28">
+        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/latomonfc-asset.png" alt="LATOMONFC — canonical on-chain Counterparty asset artwork by Nicolas Sierro. Three pixel tiles spelling N · F · C in periodic-table style.">
+        <p class="latomonfc-cover-caption">$LATOMONFC · canonical on-chain artwork</p>
       </div>
 
       <div class="latomonfc-body">

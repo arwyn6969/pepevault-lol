@@ -294,10 +294,24 @@ p { max-width: 70ch; }
   display: grid; grid-template-columns: 1fr 1.05fr; gap: 1.2rem;
   align-items: start; margin-top: 0.4rem;
 }
-.latomonfc-page-cover {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+.latomonfc-page-cover-frame {
   border-radius: 8px; border: 3px solid var(--pv-green);
   background: var(--pv-paper-warm);
+  padding: 0.9rem 0.9rem 0.6rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+}
+.latomonfc-page-cover {
+  width: 100%; max-width: 320px; height: auto; display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background: var(--pv-paper); border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.latomonfc-page-cover-caption {
+  font-family: 'Bebas Neue'; font-size: 0.7rem; letter-spacing: 0.2em;
+  color: var(--pv-green-dark); margin: 0; text-transform: uppercase;
+  text-align: center;
 }
 .latomonfc-page-body { display: flex; flex-direction: column; gap: 0.4rem; }
 .latomonfc-page-eyebrow {
@@ -613,7 +627,10 @@ p { max-width: 70ch; }
   <p class="lead">A Counterparty asset offered to the PepeVault community at NFC Lisbon — courtesy of <strong>Nicolas Sierro</strong>, OG of the 2016 Counterparty movement.</p>
 
   <div class="latomonfc-page-grid">
-    <img class="latomonfc-page-cover" src="https://media.pepevault.lol/latomonfc-poap-card.webp" alt="LATOMONFC proof-of-attendance card — hand-illustrated Pepe in a Lisbon street vendor outfit holding a golden medallion, with azulejo tiles and Tram 28">
+    <div class="latomonfc-page-cover-frame">
+      <img class="latomonfc-page-cover" src="https://media.pepevault.lol/latomonfc-asset.png" alt="LATOMONFC — canonical on-chain Counterparty asset artwork by Nicolas Sierro. Pixel tiles spelling N · F · C in periodic-table style.">
+      <p class="latomonfc-page-cover-caption">$LATOMONFC · canonical on-chain artwork</p>
+    </div>
 
     <div class="latomonfc-page-body">
       <p class="latomonfc-page-eyebrow">$LATOMONFC</p>
