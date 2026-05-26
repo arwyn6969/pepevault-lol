@@ -697,6 +697,17 @@ p { max-width: 70ch; }
 }
 .latomonfc-callout p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: #2a2a1f; }
 .latomonfc-callout a { color: var(--pv-green-soft); text-decoration: underline; text-underline-offset: 3px; }
+.latomonfc-callout .callout-steps {
+  margin: 0.3rem 0 0.5rem; padding-left: 1.4rem;
+  font-size: 0.95rem; line-height: 1.55; color: #2a2a1f;
+}
+.latomonfc-callout .callout-steps li { margin-bottom: 0.45rem; }
+.latomonfc-callout .callout-steps li:last-child { margin-bottom: 0; }
+.latomonfc-callout .callout-steps strong { color: var(--pv-green-dark); }
+.latomonfc-callout .callout-footer {
+  margin: 0.4rem 0 0; font-size: 0.85rem; color: #4a4836;
+  border-top: 1px dashed rgba(74, 101, 25, 0.3); padding-top: 0.5rem;
+}
 .latomonfc-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.4rem; }
 .latomonfc-ctas .btn-secondary { color: var(--pv-black); border-color: var(--pv-green-dark); }
 .latomonfc-ctas .btn-secondary:hover { background: var(--pv-green); color: var(--pv-black); border-color: var(--pv-green); }
@@ -1442,7 +1453,12 @@ p { max-width: 70ch; }
 
         <div class="latomonfc-callout">
           <span class="callout-flag">⚡ How to claim</span>
-          <p>Details to follow — Nicolas is coordinating with us on how attendees will receive the asset. Watch <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@pepevault1</a> and <a href="https://x.com/NicolasSierro" target="_blank" rel="noopener noreferrer">@NicolasSierro</a> for the call.</p>
+          <ol class="callout-steps">
+            <li><strong>Show up at the Vault</strong> any day of NFC Lisbon (Jun 4–6). Find a PepeVault crew member or <a href="https://x.com/ditacrypto" target="_blank" rel="noopener noreferrer">@ditacrypto</a> — we'll write down your Counterparty address (and your handle if you'd like a shout-out).</li>
+            <li><strong>One per wallet.</strong> Nicolas checks against prior NFC editions — if you already hold LATOMONFC from a previous year, you're already set.</li>
+            <li><strong>~1 week after Lisbon closes</strong>, Nicolas airdrops LATOMONFC to every verified address.</li>
+          </ol>
+          <p class="callout-footer">Questions? Ping <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@pepevault1</a> or <a href="https://x.com/NicolasSierro" target="_blank" rel="noopener noreferrer">@NicolasSierro</a>.</p>
         </div>
 
         <div class="latomonfc-ctas">
