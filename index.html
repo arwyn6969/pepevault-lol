@@ -592,6 +592,11 @@ p { max-width: 70ch; }
 .artist-modal-btn-primary:hover { background: var(--pv-green-bright); transform: translateY(-1px); }
 .artist-modal-btn-secondary { background: transparent; color: var(--pv-black); border: 1.5px solid var(--pv-black); }
 .artist-modal-btn-secondary:hover { background: var(--pv-black); color: var(--pv-cream); }
+.artist-modal-btn-special {
+  background: var(--pv-paper-warm); color: var(--pv-black);
+  border: 1.5px dashed var(--pv-green-dark); text-decoration: none;
+}
+.artist-modal-btn-special:hover { background: var(--pv-green); color: var(--pv-black); border-style: solid; }
 
 /* ===== EASTER EGG (hidden roster cards gallery) ===== */
 .egg-trigger {
@@ -631,6 +636,101 @@ p { max-width: 70ch; }
 .egg-modal-grid a { display: block; border-radius: var(--radius-card); overflow: hidden; box-shadow: var(--shadow-firm); transition: transform 0.25s; }
 .egg-modal-grid a:hover { transform: translateY(-4px); }
 .egg-modal-grid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+
+/* ===== LATOMONFC PROOF-OF-ATTENDANCE ===== */
+.latomonfc { background: var(--pv-paper); color: var(--pv-black); border-top: 4px solid var(--pv-green); position: relative; }
+.latomonfc::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--pv-green) 0 14px, transparent 14px 28px);
+  opacity: 0.55; pointer-events: none;
+}
+.latomonfc .eyebrow { color: var(--pv-green-dark); }
+.latomonfc h2 { color: var(--pv-black); margin-bottom: 0.5rem; }
+.latomonfc-sub {
+  text-align: center; max-width: 760px; margin: 0 auto 3.5rem;
+  font-size: 1.1rem; line-height: 1.55; color: #3a3826;
+}
+.latomonfc-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 3rem; align-items: start; max-width: 1120px; margin: 0 auto;
+}
+@media (max-width: 920px) { .latomonfc-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.latomonfc-cover {
+  border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: 0 12px 36px rgba(14, 15, 12, 0.22);
+  border: 3px solid var(--pv-green);
+  background: var(--pv-paper-warm);
+  padding: 1.4rem 1.4rem 0.9rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.latomonfc-cover img {
+  width: 100%; max-width: 420px; height: auto; display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background: var(--pv-paper); border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(14, 15, 12, 0.12);
+}
+.latomonfc-cover-caption {
+  font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.22em;
+  color: var(--pv-green-dark); margin: 0; text-transform: uppercase;
+  text-align: center;
+}
+.latomonfc-body { color: var(--pv-black); }
+.latomonfc-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 1.05rem; letter-spacing: 0.25em;
+  color: var(--pv-green-dark); margin-bottom: 0.4rem; text-transform: uppercase;
+}
+.latomonfc-title {
+  font-family: 'Bebas Neue'; font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em; color: var(--pv-black); margin: 0 0 0.4rem;
+  line-height: 1;
+}
+.latomonfc-tagline {
+  font-family: 'Bebas Neue'; letter-spacing: 0.12em;
+  color: var(--pv-green-soft); margin-bottom: 1.4rem;
+  font-size: 1.15rem;
+}
+.latomonfc-desc { font-size: 1.02rem; line-height: 1.6; margin-bottom: 1rem; color: #2a2a1f; }
+.latomonfc-desc strong { color: var(--pv-green-soft); }
+.latomonfc-desc em { font-style: italic; color: #4a4836; }
+.latomonfc-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0; }
+.latomonfc-meta .meta-pill {
+  background: var(--pv-paper-warm); color: var(--pv-black);
+  font-family: 'Bebas Neue'; font-size: 0.85rem; letter-spacing: 0.1em;
+  padding: 0.3rem 0.7rem; border-radius: var(--radius-pill);
+  border: 1px solid rgba(74, 101, 25, 0.3);
+}
+.latomonfc-callout {
+  background: var(--pv-paper-warm); border-left: 4px solid var(--pv-green);
+  padding: 0.9rem 1.1rem; margin-bottom: 1.4rem; border-radius: 4px;
+}
+.latomonfc-callout .callout-flag {
+  display: inline-block; font-family: 'Bebas Neue'; letter-spacing: 0.16em;
+  font-size: 0.9rem; color: var(--pv-green-dark); margin-bottom: 0.3rem;
+}
+.latomonfc-callout p { margin: 0; font-size: 0.95rem; line-height: 1.5; color: #2a2a1f; }
+.latomonfc-callout a { color: var(--pv-green-soft); text-decoration: underline; text-underline-offset: 3px; }
+.latomonfc-callout .callout-steps {
+  margin: 0.3rem 0 0.5rem; padding-left: 1.4rem;
+  font-size: 0.95rem; line-height: 1.55; color: #2a2a1f;
+}
+.latomonfc-callout .callout-steps li { margin-bottom: 0.45rem; }
+.latomonfc-callout .callout-steps li:last-child { margin-bottom: 0; }
+.latomonfc-callout .callout-steps strong { color: var(--pv-green-dark); }
+.latomonfc-callout .callout-footer {
+  margin: 0.4rem 0 0; font-size: 0.85rem; color: #4a4836;
+  border-top: 1px dashed rgba(74, 101, 25, 0.3); padding-top: 0.5rem;
+}
+.latomonfc-ctas { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.4rem; }
+.latomonfc-ctas .btn-secondary { color: var(--pv-black); border-color: var(--pv-green-dark); }
+.latomonfc-ctas .btn-secondary:hover { background: var(--pv-green); color: var(--pv-black); border-color: var(--pv-green); }
+.latomonfc-credit {
+  font-size: 0.88rem; line-height: 1.6; color: #4a4836;
+  border-top: 1px dashed rgba(74, 101, 25, 0.4); padding-top: 1rem; margin-top: 0.5rem;
+}
+.latomonfc-credit strong { color: var(--pv-green-dark); }
+.latomonfc-credit a { color: var(--pv-green-soft); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ===== EVENTS ===== */
 .events { background: var(--pv-black); border-top: 4px solid var(--pv-green); }
@@ -1337,6 +1437,56 @@ p { max-width: 70ch; }
   </div>
 </section>
 
+<!-- ===== LATOMONFC PROOF-OF-ATTENDANCE ===== -->
+<section class="section latomonfc" id="latomonfc">
+  <div class="container">
+    <p class="eyebrow center" style="text-align: center;">A Gift from the Family · Counterparty</p>
+    <h2 style="text-align: center;">PROOF OF ATTENDANCE</h2>
+    <p class="latomonfc-sub">A Counterparty asset offered to the PepeVault community at NFC Lisbon — courtesy of <strong>Nicolas Sierro</strong>, OG of the 2016 Counterparty movement.</p>
+
+    <div class="latomonfc-grid">
+      <div class="latomonfc-cover">
+        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/latomonfc-asset.png" alt="LATOMONFC — canonical on-chain Counterparty asset artwork by Nicolas Sierro. Three pixel tiles spelling N · F · C in periodic-table style.">
+        <p class="latomonfc-cover-caption">$LATOMONFC · canonical on-chain artwork</p>
+      </div>
+
+      <div class="latomonfc-body">
+        <p class="latomonfc-eyebrow">$LATOMONFC</p>
+        <h3 class="latomonfc-title">The Lisbon POAP</h3>
+        <p class="latomonfc-tagline">For the people who actually show up.</p>
+
+        <p class="latomonfc-desc">Two years ago, <strong>Shaban of EverdreamSoft</strong> — the studio behind <em>Spells of Genesis</em> and <em>Orbital</em> — kicked off the original wave of Counterparty asset activations and airdrops at NFC Lisbon. For that moment, <strong>Nicolas Sierro</strong> issued <strong>LATOMONFC</strong>: a proof-of-attendance asset on Counterparty, chain-permanent, lore-coded.</p>
+
+        <p class="latomonfc-desc">Nicolas is back, and he's offering LATOMONFC to <strong>our community</strong> at NFC Lisbon 2026. A small Bitcoin-native token of the night you showed up. Pure community, pure lineage, pure Counterparty.</p>
+
+        <div class="latomonfc-meta">
+          <span class="meta-pill">Counterparty</span>
+          <span class="meta-pill">Bitcoin · On-chain</span>
+          <span class="meta-pill">NFC Lisbon · Jun 4–6</span>
+          <span class="meta-pill">by @NicolasSierro</span>
+        </div>
+
+        <div class="latomonfc-callout">
+          <span class="callout-flag">⚡ How to claim</span>
+          <ol class="callout-steps">
+            <li><strong>Show up at the Vault</strong> any day of NFC Lisbon (Jun 4–6). Find a PepeVault crew member or <a href="https://x.com/ditacrypto" target="_blank" rel="noopener noreferrer">@ditacrypto</a> — we'll write down your Counterparty address (and your handle if you'd like a shout-out).</li>
+            <li><strong>One per wallet.</strong> Nicolas checks against prior NFC editions — if you already hold LATOMONFC from a previous year, you're already set.</li>
+            <li><strong>~1 week after Lisbon closes</strong>, Nicolas airdrops LATOMONFC to every verified address.</li>
+          </ol>
+          <p class="callout-footer">Questions? Ping <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@pepevault1</a> or <a href="https://x.com/NicolasSierro" target="_blank" rel="noopener noreferrer">@NicolasSierro</a>.</p>
+        </div>
+
+        <div class="latomonfc-ctas">
+          <a class="btn btn-primary" href="https://tokenscan.io/asset/LATOMONFC" target="_blank" rel="noopener noreferrer">📜 View LATOMONFC on Counterparty →</a>
+          <a class="btn btn-secondary" href="https://blockchainizator.com/blockchainizator/" target="_blank" rel="noopener noreferrer">⚗️ Visit Nicolas Sierro →</a>
+        </div>
+
+        <p class="latomonfc-credit">Lineage: <strong>Shaban</strong> · EverdreamSoft · Spells of Genesis · Orbital · Counterparty.<br>Issued by <strong>Nicolas Sierro</strong> — see his profile in <a href="#roster">the Vault roster</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== EVENTS ===== -->
 <section class="section events" id="events">
   <div class="container">
@@ -1750,7 +1900,7 @@ const roster = [
   { name: "SUBTERRANEAN", handle: "@subterranean_1", xUrl: "https://x.com/subterranean_1", spotlight: "https://media.pepevault.lol/2b1c556a-1260-42f1-ad24-017573bf3e7b.webp", pepeWtf: "https://pepe.wtf/artists/subterranean", desc: "Artist, collector and writer working below the FAKERARES surface. Sharp dispatches from the Pepe underground.", richDesc: "Artist, collector and writer working below the FAKERARES surface. Builds quietly across the canon and pens some of the sharpest dispatches from inside the Pepe underground — the chain's anonymous historian.", collection: "FAKERARES · WRITING · ON-CHAIN ARCHIVE", img: "https://unavatar.io/x/subterranean_1", tag: "Lore" },
   { name: "MIKE IN SPACE", handle: "@mikeinspace", xUrl: "https://x.com/mikeinspace", spotlight: "https://media.pepevault.lol/59b04eef-74a3-4f05-9a61-a209fa68f5b1.webp", pepeWtf: "https://stampchain.io", desc: "Co-creator of the Bitcoin Stamps protocol. Holds OG Rare Pepe CHAMPAGNETNT (S25/C38).", richDesc: "Co-creator of the Bitcoin Stamps protocol — the builder who showed the world an immutable artifact stored straight to Bitcoin transactions. Holds OG Rare Pepe CHAMPAGNETNT (Series 25, Card 38). Equal parts engineer, collector, and lore-keeper.", collection: "BITCOIN STAMPS · CO-CREATOR · RARE PEPES", img: "https://unavatar.io/x/mikeinspace", tag: "Stamps" },
   { name: "DANK FROGLET", handle: "@DANKFROGLET", xUrl: "https://x.com/DANKFROGLET", spotlight: "https://media.pepevault.lol/7c389185-8935-4a4e-a408-edc00082d41d.webp", pepeWtf: "https://pepe.wtf/artists/Regan", desc: "Regan from Dank Rares. Stamp #29. Curates the Dank Directory of pepes, frogs and Bobos on Bitcoin Stamps.", richDesc: "Regan from Dank Rares — the hand behind Dank Rares, the Dank Directory, and Stamp #29. Curates a corner of Bitcoin Stamps where Pepes, frogs, and Bobos all share the chain. Named by Mike In Space as a protocol collaborator.", collection: "BITCOIN STAMPS · DANK RARES · DANK DIRECTORY", img: "https://unavatar.io/x/DANKFROGLET", tag: "Stamps" },
-  { name: "NICOLAS SIERRO", handle: "@NicolasSierro", xUrl: "https://x.com/NicolasSierro", spotlight: "https://media.pepevault.lol/288ba9c0-62c7-4020-a450-88f901c1adaf.webp", pepeWtf: "https://pepe.wtf/artists/nicolas-sierro", desc: "Swiss painter and OG of the 2016 Counterparty movement. Created PEPETHESOG. Alias: Hilaire de Rien.", richDesc: "Swiss painter and OG of the 2016 Counterparty movement, behind PEPETHESOG and a body of work that helped define what a Rare Pepe could be. Carries the alias Hilaire de Rien through gallery shows and crypto-art history alike — fine-art lineage applied to the original chain.", collection: "RARE PEPES · SWISS PAINTING · OG COUNTERPARTY", img: "https://unavatar.io/x/NicolasSierro", tag: "Originals" },
+  { name: "NICOLAS SIERRO", handle: "@NicolasSierro", xUrl: "https://x.com/NicolasSierro", spotlight: "https://media.pepevault.lol/288ba9c0-62c7-4020-a450-88f901c1adaf.webp", pepeWtf: "https://blockchainizator.com/blockchainizator/", specialCta: { href: "#latomonfc", label: "🎟 LATOMONFC · His gift to the Vault →" }, desc: "Swiss painter and OG of the 2016 Counterparty movement. Created PEPETHESOG. Issued LATOMONFC — his proof-of-attendance gift to the Vault at NFC Lisbon. Alias: Hilaire de Rien.", richDesc: "Swiss painter and OG of the 2016 Counterparty movement, behind PEPETHESOG and a body of work that helped define what a Rare Pepe could be. Carries the alias Hilaire de Rien through gallery shows and crypto-art history alike — fine-art lineage applied to the original chain. Two years ago he issued LATOMONFC, a Counterparty proof-of-attendance asset, for Shaban of EverdreamSoft's original NFC Lisbon community drop — and he's offering it again to the PepeVault community at NFC Lisbon 2026.", collection: "RARE PEPES · SWISS PAINTING · OG COUNTERPARTY · LATOMONFC", img: "https://media.pepevault.lol/avatar-nicolas-sierro.webp", tag: "Originals" },
   { name: "NIKOLINA PETOLAS", handle: "@NikolinaPetolas", xUrl: "https://x.com/NikolinaPetolas", spotlight: "https://media.pepevault.lol/91aad027-4fc6-4ac4-8601-6ac91e9edcb1.webp", pepeWtf: "https://nikolinapetolas.com", desc: "Croatian photo-collage and oil-painting artist. FAKERARES: CONTESSAPEPA, CONTEPEPE, FAKESOL, UNTAMED.", richDesc: "Croatian photo-collage and oil-painting artist whose FAKERARES — CONTESSAPEPA, CONTEPEPE, FAKESOL, UNTAMED — read like baroque tableaux folded into the Pepe canon. Exhibited at Pepes in Paris, October 2023. Brings museum-grade composition to the chain.", collection: "FAKERARES · PHOTO-COLLAGE · OIL PAINTING", img: "https://unavatar.io/x/NikolinaPetolas", tag: "Lore" },
   { name: "MORTYLEN", handle: "@lentymor", xUrl: "https://x.com/lentymor", spotlight: "https://media.pepevault.lol/3d6e1a5a-25b0-4548-8f16-f101e826f96a.webp", pepeWtf: "https://stampchain.io/wallet/bc1q3vcapstlk86v2fav7gjrqfg9z9kxu8l8j873gm", desc: "Bitcoin Stamps prolific creator. 480+ stamps. Member of the NSIDirectory team.", richDesc: "Bitcoin Stamps prolific creator with hundreds of stamps to their name and a hand in the NSIDirectory team. Quietly stacks chain-permanent artifacts at a relentless pace — Mortylen's wallet reads like an annotated index of what Stamps can hold.", collection: "BITCOIN STAMPS · NSIDIRECTORY · 480+ STAMPS", img: "https://unavatar.io/x/lentymor", tag: "Stamps" },
   { name: "BABALICIOUS", handle: "@babalicious_io", xUrl: "https://x.com/babalicious_io", spotlight: "https://media.pepevault.lol/0581fd0c-33a9-465b-afea-f39f673cc95e.webp", pepeWtf: "https://babalicious.io", desc: "Pseudonymous Bitcoin Stamps artist + stampchain.io collaborator. Builder and dropper across the protocol.", richDesc: "Pseudonymous Bitcoin Stamps artist and deep stampchain.io collaborator, building tools and dropping art across the protocol. Operates from babalicious.io — equal parts art practice and infrastructure work. The chain remembers what they ship.", collection: "BITCOIN STAMPS · STAMPCHAIN COLLABORATOR · INFRASTRUCTURE", img: "https://unavatar.io/x/babalicious_io", tag: "Stamps" },
@@ -1811,6 +1961,7 @@ roster.forEach((artist, idx) => {
       else if (artist.pepeWtf.includes('amydigi.com')) pepeCtaLabel = '🎨 Visit amydigi.com →';
       else if (artist.pepeWtf.includes('lfgcrypto.art')) pepeCtaLabel = '🚀 Visit lfgcrypto.art →';
       else if (artist.pepeWtf.includes('gh0stt.dev')) pepeCtaLabel = '👻 Visit gh0stt.dev →';
+      else if (artist.pepeWtf.includes('blockchainizator.com')) pepeCtaLabel = '⚗️ Visit blockchainizator.com →';
       else if (artist.pepeWtf.includes('fakeraredirectory.com')) pepeCtaLabel = '🃏 Visit fakeraredirectory.com →';
       else if (artist.pepeWtf.includes('wiki.pepe.wtf/chapter-4-latest-developments/notable-pepes')) pepeCtaLabel = '🐸 Explore Notable Pepes →';
       else if (artist.pepeWtf.includes('stampchain.io')) pepeCtaLabel = '⚡ Visit stampchain.io →';
@@ -1823,8 +1974,11 @@ roster.forEach((artist, idx) => {
     const xCta = artist.xUrl
       ? `<a href="${artist.xUrl}" target="_blank" rel="noopener noreferrer" class="artist-modal-btn artist-modal-btn-secondary">⚡ Follow on X →</a>`
       : '';
-    const ctas = (xCta || pepeCta)
-      ? `<div class="artist-modal-ctas">${pepeCta}${xCta}</div>`
+    const specialCta = artist.specialCta
+      ? `<a href="${artist.specialCta.href}" class="artist-modal-btn artist-modal-btn-special" data-modal-close-then-jump>${artist.specialCta.label}</a>`
+      : '';
+    const ctas = (xCta || pepeCta || specialCta)
+      ? `<div class="artist-modal-ctas">${pepeCta}${specialCta}${xCta}</div>`
       : `<div class="artist-modal-ctas" style="opacity: 0.7;"><span style="font-family: 'Bebas Neue'; letter-spacing: 0.16em; color: var(--pv-green-dark);">★ Profile pending artist confirmation ★</span></div>`;
 
     contentHost.innerHTML = `
@@ -1868,6 +2022,12 @@ roster.forEach((artist, idx) => {
   closeBtn?.addEventListener('click', closeArtist);
   modal.addEventListener('click', e => { if (e.target === modal) closeArtist(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeArtist(); });
+
+  // Special CTAs (e.g., Nicolas → LATOMONFC) close the modal so the anchor scroll lands cleanly
+  modal.addEventListener('click', e => {
+    const target = e.target.closest('[data-modal-close-then-jump]');
+    if (target) closeArtist();
+  });
 })();
 
 // Maps are now OpenStreetMap iframe embeds — no JS init needed
