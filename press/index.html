@@ -286,6 +286,62 @@ p { max-width: 70ch; }
   word-break: break-all;
 }
 
+/* ===== LATOMONFC PROOF-OF-ATTENDANCE PAGE ===== */
+.latomonfc-page h2 { color: var(--pv-black); margin-bottom: 0.4rem; }
+.latomonfc-page .lead { font-family: 'Space Grotesk'; color: var(--pv-black); margin-bottom: 1.4rem; font-size: 0.95rem; line-height: 1.5; max-width: 100%; }
+.latomonfc-page .lead strong { color: var(--pv-green-dark); }
+.latomonfc-page-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 1.2rem;
+  align-items: start; margin-top: 0.4rem;
+}
+.latomonfc-page-cover {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  border-radius: 8px; border: 3px solid var(--pv-green);
+  background: var(--pv-paper-warm);
+}
+.latomonfc-page-body { display: flex; flex-direction: column; gap: 0.4rem; }
+.latomonfc-page-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.24em;
+  color: var(--pv-green-dark); margin: 0;
+}
+.latomonfc-page-title {
+  font-family: 'Bebas Neue'; font-size: 1.6rem; letter-spacing: 0.04em;
+  color: var(--pv-black); margin: 0; line-height: 1;
+}
+.latomonfc-page-tag {
+  font-family: 'Bebas Neue'; font-size: 0.9rem; letter-spacing: 0.16em;
+  color: var(--pv-terra); margin: 0 0 0.3rem;
+}
+.latomonfc-page-desc { font-size: 0.86rem; line-height: 1.45; color: var(--pv-black); margin: 0.2rem 0; max-width: 100%; }
+.latomonfc-page-desc strong { color: var(--pv-green-dark); }
+.latomonfc-page-desc em { color: var(--pv-gray); font-style: italic; }
+.latomonfc-page-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.5rem 0; }
+.lp-pill {
+  background: rgba(74,101,25,0.08); border: 1px solid var(--pv-green-dark);
+  color: var(--pv-black); font-family: 'Bebas Neue';
+  font-size: 0.66rem; letter-spacing: 0.14em; padding: 0.22rem 0.5rem;
+  border-radius: 4px;
+}
+.latomonfc-page-callout {
+  background: var(--pv-paper-warm); border-left: 4px solid var(--pv-green);
+  padding: 0.65rem 0.85rem; border-radius: 4px;
+  font-size: 0.82rem; line-height: 1.45; margin: 0.4rem 0;
+}
+.latomonfc-page-callout strong { color: var(--pv-green-dark); }
+.latomonfc-page-url {
+  font-family: 'Space Grotesk'; font-size: 0.78rem; line-height: 1.4;
+  color: var(--pv-black); margin: 0.15rem 0; word-break: break-all;
+}
+.latomonfc-page-url strong {
+  font-family: 'Bebas Neue'; font-size: 0.72rem; letter-spacing: 0.16em;
+  color: var(--pv-green-dark); margin-right: 0.3rem;
+}
+.latomonfc-page-credit {
+  font-size: 0.78rem; line-height: 1.5; color: var(--pv-black);
+  border-top: 1px dashed var(--pv-green-dark); padding-top: 0.6rem; margin-top: 0.4rem;
+}
+.latomonfc-page-credit strong { color: var(--pv-green-dark); }
+
 /* ===== SPONSORS ===== */
 .sponsors-page h2 { color: var(--pv-black); margin-bottom: 0.4rem; }
 .sponsors-page .lead { font-family: 'Bebas Neue'; letter-spacing: 0.15em; color: var(--pv-green-dark); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -550,19 +606,59 @@ p { max-width: 70ch; }
   <div class="page-num">07</div>
 </section>
 
-<!-- ===== PAGE 8: ROSTER ===== -->
-<section class="page roster-page">
-  <p class="eyebrow">Verified Roster · §07</p>
-  <h2>27 ARTISTS ACROSS THE LORE</h2>
-  <p class="lead">Profiles sourced from primary references only — X profiles, pepe.wtf, verified personal sites.</p>
-  <div class="roster-list" id="rosterList"><!-- populated by JS --></div>
+<!-- ===== PAGE 8: LATOMONFC PROOF-OF-ATTENDANCE ===== -->
+<section class="page latomonfc-page">
+  <p class="eyebrow">Community Gift · §07</p>
+  <h2>PROOF OF ATTENDANCE</h2>
+  <p class="lead">A Counterparty asset offered to the PepeVault community at NFC Lisbon — courtesy of <strong>Nicolas Sierro</strong>, OG of the 2016 Counterparty movement.</p>
+
+  <div class="latomonfc-page-grid">
+    <img class="latomonfc-page-cover" src="https://media.pepevault.lol/latomonfc-poap-card.webp" alt="LATOMONFC proof-of-attendance card — hand-illustrated Pepe in a Lisbon street vendor outfit holding a golden medallion, with azulejo tiles and Tram 28">
+
+    <div class="latomonfc-page-body">
+      <p class="latomonfc-page-eyebrow">$LATOMONFC</p>
+      <h3 class="latomonfc-page-title">THE LISBON POAP</h3>
+      <p class="latomonfc-page-tag">FOR THE PEOPLE WHO ACTUALLY SHOW UP.</p>
+
+      <p class="latomonfc-page-desc">Two years ago, <strong>Shaban of EverdreamSoft</strong> — the studio behind <em>Spells of Genesis</em> and <em>Orbital</em> — kicked off the original wave of Counterparty asset activations and airdrops at NFC Lisbon. For that moment, <strong>Nicolas Sierro</strong> issued <strong>LATOMONFC</strong>: a proof-of-attendance asset on Counterparty, chain-permanent, lore-coded.</p>
+
+      <p class="latomonfc-page-desc">Nicolas is back, and he's offering LATOMONFC to <strong>our community</strong> at NFC Lisbon 2026. A small Bitcoin-native token of the night you showed up. Pure community, pure lineage, pure Counterparty.</p>
+
+      <div class="latomonfc-page-meta">
+        <span class="lp-pill">Counterparty</span>
+        <span class="lp-pill">Bitcoin · On-chain</span>
+        <span class="lp-pill">NFC Lisbon · Jun 4–6</span>
+        <span class="lp-pill">by @NicolasSierro</span>
+      </div>
+
+      <div class="latomonfc-page-callout">
+        <strong>⚡ How to claim:</strong> Details to follow. Nicolas is coordinating with us on how attendees will receive the asset. Watch <strong>@pepevault1</strong> and <strong>@NicolasSierro</strong> for the call.
+      </div>
+
+      <p class="latomonfc-page-url"><strong>View on Counterparty:</strong> tokenscan.io/asset/LATOMONFC</p>
+      <p class="latomonfc-page-url"><strong>Issuer:</strong> blockchainizator.com/blockchainizator/</p>
+
+      <p class="latomonfc-page-credit"><strong>Lineage:</strong> Shaban · EverdreamSoft · Spells of Genesis · Orbital · Counterparty.<br><strong>Issued by:</strong> Nicolas Sierro — see his profile in the Verified Roster (§08).</p>
+    </div>
+  </div>
+
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
   <div class="page-num">08</div>
 </section>
 
-<!-- ===== PAGE 9: SPONSORS ===== -->
+<!-- ===== PAGE 9: ROSTER ===== -->
+<section class="page roster-page">
+  <p class="eyebrow">Verified Roster · §08</p>
+  <h2>31 ARTISTS ACROSS THE LORE</h2>
+  <p class="lead">Profiles sourced from primary references only — X profiles, pepe.wtf, verified personal sites.</p>
+  <div class="roster-list" id="rosterList"><!-- populated by JS --></div>
+  <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
+  <div class="page-num">09</div>
+</section>
+
+<!-- ===== PAGE 10: SPONSORS ===== -->
 <section class="page sponsors-page">
-  <p class="eyebrow">Partners · §08</p>
+  <p class="eyebrow">Partners · §09</p>
   <h2>SPONSORS &amp; PARTNERS</h2>
   <p class="lead">Real lore stewards. They keep this thing alive.</p>
 
@@ -593,12 +689,12 @@ p { max-width: 70ch; }
   </div>
 
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
-  <div class="page-num">09</div>
+  <div class="page-num">10</div>
 </section>
 
-<!-- ===== PAGE 10: BRAND ASSETS + CONTACT ===== -->
+<!-- ===== PAGE 11: BRAND ASSETS + CONTACT ===== -->
 <section class="page contact-page">
-  <p class="eyebrow">Brand Assets &amp; Contact · §09</p>
+  <p class="eyebrow">Brand Assets &amp; Contact · §10</p>
   <h2>BRAND ASSETS</h2>
   <p class="lead">Official logo variants. SVG is preferred for any digital use.</p>
 
@@ -644,7 +740,7 @@ p { max-width: 70ch; }
   <p class="byline">★ REAL ASSETS · REAL ARTISTS · REAL CHAOS · DYOR · TOUCH GRASS · TRADE PEPES ★</p>
 
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
-  <div class="page-num">10</div>
+  <div class="page-num">11</div>
 </section>
 
 <script>
@@ -674,7 +770,7 @@ const roster = [
   { name: "SUBTERRANEAN", handle: "@subterranean_1", desc: "Artist, collector and writer working below the FAKERARES surface. Sharp dispatches from the Pepe underground.", pepe: "pepe.wtf/artists/subterranean", img: "https://unavatar.io/x/subterranean_1" },
   { name: "MIKE IN SPACE", handle: "@mikeinspace", desc: "Co-creator of the Bitcoin Stamps protocol. Holds OG Rare Pepe CHAMPAGNETNT (S25/C38).", pepe: "stampchain.io", img: "https://unavatar.io/x/mikeinspace" },
   { name: "DANK FROGLET", handle: "@DANKFROGLET", desc: "Regan from Dank Rares. Stamp #29. Curates the Dank Directory of pepes, frogs and Bobos on Bitcoin Stamps.", pepe: "pepe.wtf/artists/Regan", img: "https://unavatar.io/x/DANKFROGLET" },
-  { name: "NICOLAS SIERRO", handle: "@NicolasSierro", desc: "Swiss painter + OG of the 2016 Counterparty movement. Created PEPETHESOG. Alias: Hilaire de Rien.", pepe: "pepe.wtf/artists/nicolas-sierro", img: "https://unavatar.io/x/NicolasSierro" },
+  { name: "NICOLAS SIERRO", handle: "@NicolasSierro", desc: "Swiss painter + OG of the 2016 Counterparty movement. Created PEPETHESOG. Issued LATOMONFC — his Counterparty proof-of-attendance gift to the Vault at NFC Lisbon (§07). Alias: Hilaire de Rien.", pepe: "blockchainizator.com/blockchainizator/", img: "https://media.pepevault.lol/avatar-nicolas-sierro.webp" },
   { name: "NIKOLINA PETOLAS", handle: "@NikolinaPetolas", desc: "Croatian photo-collage and oil-painting artist. FAKERARES: CONTESSAPEPA, CONTEPEPE, FAKESOL, UNTAMED.", pepe: "nikolinapetolas.com", img: "https://unavatar.io/x/NikolinaPetolas" },
   { name: "MORTYLEN", handle: "@lentymor", desc: "Bitcoin Stamps prolific creator. 480+ stamps. Member of the NSIDirectory team.", pepe: "stampchain.io/wallet/bc1q3vcapstlk86v2fav7gjrqfg9z9kxu8l8j873gm", img: "https://unavatar.io/x/lentymor" },
   { name: "BABALICIOUS", handle: "@babalicious_io", desc: "Pseudonymous Bitcoin Stamps artist + stampchain.io collaborator. Builder and dropper across the protocol.", pepe: "babalicious.io", img: "https://unavatar.io/x/babalicious_io" },
