@@ -353,6 +353,111 @@ p { max-width: 70ch; }
 }
 .latomonfc-page-credit strong { color: var(--pv-green-dark); }
 
+/* ===== RARE GALLOS LIVE-UNVEILING PAGE (v43) ===== */
+.rare-gallos-page h2 { color: var(--pv-black); margin-bottom: 0.4rem; }
+.rare-gallos-page .lead { font-family: 'Space Grotesk'; color: var(--pv-black); margin-bottom: 1.4rem; font-size: 0.95rem; line-height: 1.5; max-width: 100%; }
+.rare-gallos-page .lead strong { color: var(--pv-green-dark); }
+.rg-press-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr; gap: 1.2rem;
+  align-items: start; margin-top: 0.4rem;
+}
+
+/* Static curtain frame for print — no animation, gold trim, "Awaiting Unveiling" placard */
+.rg-press-frame {
+  position: relative; aspect-ratio: 4 / 5;
+  border-radius: 6px; overflow: hidden;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 100%, var(--pv-paper-warm) 0deg 90deg, #e0d0a0 90deg 180deg);
+  border: 3px solid #6a3f12;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12), inset 0 0 0 2px rgba(232,163,60,0.4);
+}
+.rg-press-valance {
+  position: absolute; top: 0; left: 0; right: 0; height: 14%;
+  background: linear-gradient(180deg, #6a3f12 0%, #b07820 40%, #e8a33c 65%, #c4862a 90%, #6a3f12 100%);
+  border-bottom: 2px solid #3a1f06;
+}
+.rg-press-curtain {
+  position: absolute; top: 0; bottom: 0; width: 38%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #4a1a1a 0px,
+      #6a2424 9px,
+      #3a1010 18px,
+      #6a2424 27px,
+      #7a2c2c 38px
+    );
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.55), inset 0 0 0 2px rgba(232,163,60,0.25);
+}
+.rg-press-curtain.left {
+  left: 0; clip-path: polygon(0 0, 100% 0, 92% 30%, 96% 60%, 100% 100%, 0 100%);
+}
+.rg-press-curtain.right {
+  right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 4% 100%, 8% 60%, 4% 30%);
+}
+.rg-press-placard {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; padding: 0.8rem 1rem;
+  width: 80%; max-width: 240px;
+}
+.rg-press-placard-mark {
+  display: block;
+  font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.22em;
+  color: #6a3f12; margin-bottom: 0.35rem;
+}
+.rg-press-placard-title {
+  font-family: 'Bebas Neue'; font-size: 1.1rem; letter-spacing: 0.14em;
+  color: var(--pv-black); margin: 0 0 0.25rem; line-height: 1.1;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.8);
+}
+.rg-press-placard-sub {
+  font-family: 'Source Serif Pro', Georgia, serif; font-style: italic;
+  font-size: 0.7rem; color: var(--pv-black); opacity: 0.85;
+  letter-spacing: 0.04em;
+}
+.rg-press-cover-caption {
+  font-family: 'Bebas Neue'; font-size: 0.7rem; letter-spacing: 0.2em;
+  color: var(--pv-green-dark); margin: 0.5rem 0 0; text-transform: uppercase;
+  text-align: center;
+}
+
+/* Body column (mirrors latomonfc-page-body conventions) */
+.rg-press-body { display: flex; flex-direction: column; gap: 0.4rem; }
+.rg-press-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.24em;
+  color: var(--pv-green-dark); margin: 0;
+}
+.rg-press-title {
+  font-family: 'Bebas Neue'; font-size: 1.6rem; letter-spacing: 0.04em;
+  color: var(--pv-black); margin: 0; line-height: 1;
+}
+.rg-press-tag {
+  font-family: 'Bebas Neue'; font-size: 0.9rem; letter-spacing: 0.16em;
+  color: var(--pv-terra); margin: 0 0 0.3rem;
+}
+.rg-press-desc { font-size: 0.86rem; line-height: 1.45; color: var(--pv-black); margin: 0.2rem 0; max-width: 100%; }
+.rg-press-desc strong { color: var(--pv-green-dark); }
+.rg-press-desc em { color: var(--pv-terra); font-style: italic; }
+.rg-press-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.5rem 0; }
+.rg-press-sales {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;
+  margin: 0.45rem 0;
+}
+.rg-press-sale {
+  background: var(--pv-paper-warm); border-left: 4px solid var(--pv-green);
+  padding: 0.55rem 0.7rem; border-radius: 4px;
+  font-size: 0.78rem; line-height: 1.4;
+}
+.rg-press-sale strong { color: var(--pv-green-dark); display: block; font-family: 'Bebas Neue'; font-size: 0.78rem; letter-spacing: 0.16em; margin-bottom: 0.25rem; }
+.rg-press-sale-line { color: var(--pv-black); }
+.rg-press-sale-platform { font-family: 'Space Grotesk'; font-size: 0.72rem; color: var(--pv-green-dark); margin-top: 0.25rem; word-break: break-all; }
+.rg-press-credit {
+  font-size: 0.78rem; line-height: 1.5; color: var(--pv-black);
+  border-top: 1px dashed var(--pv-green-dark); padding-top: 0.6rem; margin-top: 0.4rem;
+}
+.rg-press-credit strong { color: var(--pv-green-dark); }
+
 /* ===== SPONSORS ===== */
 .sponsors-page h2 { color: var(--pv-black); margin-bottom: 0.4rem; }
 .sponsors-page .lead { font-family: 'Bebas Neue'; letter-spacing: 0.15em; color: var(--pv-green-dark); margin-bottom: 1.5rem; font-size: 0.95rem; }
@@ -664,7 +769,7 @@ p { max-width: 70ch; }
       <p class="latomonfc-page-url"><strong>View on Counterparty:</strong> tokenscan.io/asset/LATOMONFC</p>
       <p class="latomonfc-page-url"><strong>Atomo Collection:</strong> blockchainizator.com/#atm</p>
 
-      <p class="latomonfc-page-credit"><strong>Lineage:</strong> Shaban · EverdreamSoft · Spells of Genesis · Orbital · Counterparty.<br><strong>Issued by:</strong> Nicolas Sierro — see his profile in the Verified Roster (§08).</p>
+      <p class="latomonfc-page-credit"><strong>Lineage:</strong> Shaban · EverdreamSoft · Spells of Genesis · Orbital · Counterparty.<br><strong>Issued by:</strong> Nicolas Sierro — see his profile in the Verified Roster (§09).</p>
     </div>
   </div>
 
@@ -672,19 +777,77 @@ p { max-width: 70ch; }
   <div class="page-num">08</div>
 </section>
 
-<!-- ===== PAGE 9: ROSTER ===== -->
-<section class="page roster-page">
-  <p class="eyebrow">Verified Roster · §08</p>
-  <h2>31 ARTISTS ACROSS THE LORE</h2>
-  <p class="lead">Profiles sourced from primary references only — X profiles, pepe.wtf, verified personal sites.</p>
-  <div class="roster-list" id="rosterList"><!-- populated by JS --></div>
+<!-- ===== PAGE 9: RARE GALLOS LIVE UNVEILING (v43) ===== -->
+<section class="page rare-gallos-page">
+  <p class="eyebrow">Live Unveiling · §08</p>
+  <h2>RARE GALLOS</h2>
+  <p class="lead">A Lisbon offering — by <strong>Zed</strong> &times; <strong>Arwyn</strong>. Unveiled live at NFC Lisbon, June 4–6.</p>
+
+  <div class="rg-press-grid">
+    <div>
+      <div class="rg-press-frame" aria-label="Rare Gallos — awaiting live unveiling">
+        <div class="rg-press-curtain left" aria-hidden="true"></div>
+        <div class="rg-press-curtain right" aria-hidden="true"></div>
+        <div class="rg-press-valance" aria-hidden="true"></div>
+        <div class="rg-press-placard">
+          <span class="rg-press-placard-mark">⚜ AWAITING UNVEILING ⚜</span>
+          <p class="rg-press-placard-title">RARE GALLOS</p>
+          <p class="rg-press-placard-sub">NFC Lisbon · June 4–6, 2026</p>
+        </div>
+      </div>
+      <p class="rg-press-cover-caption">The piece is hung · The curtain holds</p>
+    </div>
+
+    <div class="rg-press-body">
+      <p class="rg-press-eyebrow">SUB-COLLECTION · COUNTERPARTY</p>
+      <h3 class="rg-press-title">A BLACK ROOSTER FOR LISBON</h3>
+      <p class="rg-press-tag">FAITH · JUSTICE · GOOD FORTUNE.</p>
+
+      <p class="rg-press-desc">In the north of Portugal, a roasted rooster rose from a judge's table and crowed for a condemned pilgrim — proving his innocence at the gallows. The <strong>Galo de Barcelos</strong> still watches over Portuguese thresholds as a symbol of <em>faith</em>, <em>justice</em>, and <em>good fortune</em>.</p>
+
+      <p class="rg-press-desc">For NFC Lisbon, <strong>Zed</strong> and <strong>Arwyn</strong> have stitched the black rooster into the Pepe lineage — a sub-collection waiting inside a notorious larger drop, both yet to be named. Two versions of the original piece will be offered.</p>
+
+      <div class="rg-press-meta">
+        <span class="lp-pill">Counterparty</span>
+        <span class="lp-pill">Sub-collection</span>
+        <span class="lp-pill">NFC Lisbon · Jun 4–6</span>
+        <span class="lp-pill">by Zed &amp; Arwyn</span>
+      </div>
+
+      <div class="rg-press-sales">
+        <div class="rg-press-sale">
+          <strong>⚡ One of one</strong>
+          <p class="rg-press-sale-line">The hand-inked black-and-white original — live during the event.</p>
+          <p class="rg-press-sale-platform">cbay.ing — peer-to-peer crypto marketplace</p>
+        </div>
+        <div class="rg-press-sale">
+          <strong>⚡ Open edition</strong>
+          <p class="rg-press-sale-line">The painted Portuguese-flag colour version — <em>likely</em> dropping on pepe.wtf.</p>
+          <p class="rg-press-sale-platform">pepe.wtf/drops (platform confirmed at reveal)</p>
+        </div>
+      </div>
+
+      <p class="rg-press-credit"><strong>Lineage:</strong> Galo de Barcelos · Portuguese folk symbol · 17th-century legend.<br><strong>By:</strong> Zed Erwan &times; Arwyn — both in the Verified Roster (§09).</p>
+    </div>
+  </div>
+
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
   <div class="page-num">09</div>
 </section>
 
-<!-- ===== PAGE 10: SPONSORS ===== -->
+<!-- ===== PAGE 10: ROSTER ===== -->
+<section class="page roster-page">
+  <p class="eyebrow">Verified Roster · §09</p>
+  <h2>31 ARTISTS ACROSS THE LORE</h2>
+  <p class="lead">Profiles sourced from primary references only — X profiles, pepe.wtf, verified personal sites.</p>
+  <div class="roster-list" id="rosterList"><!-- populated by JS --></div>
+  <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
+  <div class="page-num">10</div>
+</section>
+
+<!-- ===== PAGE 11: SPONSORS ===== -->
 <section class="page sponsors-page">
-  <p class="eyebrow">Partners · §09</p>
+  <p class="eyebrow">Partners · §10</p>
   <h2>SPONSORS &amp; PARTNERS</h2>
   <p class="lead">Real lore stewards. They keep this thing alive.</p>
 
@@ -715,12 +878,12 @@ p { max-width: 70ch; }
   </div>
 
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
-  <div class="page-num">10</div>
+  <div class="page-num">11</div>
 </section>
 
-<!-- ===== PAGE 11: BRAND ASSETS + CONTACT ===== -->
+<!-- ===== PAGE 12: BRAND ASSETS + CONTACT ===== -->
 <section class="page contact-page">
-  <p class="eyebrow">Brand Assets &amp; Contact · §10</p>
+  <p class="eyebrow">Brand Assets &amp; Contact · §11</p>
   <h2>BRAND ASSETS</h2>
   <p class="lead">Official logo variants. SVG is preferred for any digital use.</p>
 
@@ -766,7 +929,7 @@ p { max-width: 70ch; }
   <p class="byline">★ REAL ASSETS · REAL ARTISTS · REAL CHAOS · DYOR · TOUCH GRASS · TRADE PEPES ★</p>
 
   <div class="page-footer"><img src="https://media.pepevault.lol/pepevault-logo.svg" alt="">PEPEVAULT · PRESS KIT 2026</div>
-  <div class="page-num">11</div>
+  <div class="page-num">12</div>
 </section>
 
 <script>
