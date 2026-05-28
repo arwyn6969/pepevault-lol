@@ -17,7 +17,7 @@ A curated travelling exhibition that surfaces the real on-chain Pepe lineage —
 
 - 📍 **NFC LISBON** · Jun 4–6 · Unicorn Factory Lisboa
 - 🟢 **STAMPFEST 3 · The Flock Party** · sponsored by Stampchain.io · secret Lisbon location
-- 📍 **PEPEX PRAGUE** · Jun 11 · Cross Club basement (warmup × 600000000000.com)
+- 📍 **PEPEX PRAGUE** · Jun 11 · Fuchs2 · Štvanice Island · bar upstairs (warmup × 600000000000.com)
 
 ## Repo contents
 

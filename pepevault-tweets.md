@@ -34,7 +34,7 @@ The lineage continues. FAKERARES. NOTABLE PEPES. BITCOIN STAMPS.
 
 📍 NFC LISBON · June 4–6 · Unicorn Factory Lisboa
 🟢 STAMPFEST 3 · Flock Party · sponsored by @Stampchain · secret Lisbon location
-📍 PEPEX PRAGUE · June 11 · Cross Club basement (warmup × 600000000000.com)
+📍 PEPEX PRAGUE · June 11 · Fuchs2 · Štvanice Island · bar upstairs (warmup × 600000000000.com)
 
 18 verified artists. The Vault unlocked.
 ```
@@ -341,7 +341,7 @@ LISBON · WRAPPED.
 
 Thank you Unicorn Factory. Thank you everyone who walked the floor.
 
-Next stop: PEPEX PRAGUE · Cross Club basement · June 11.
+Next stop: PEPEX PRAGUE · Fuchs2 bar upstairs · Štvanice Island · June 11.
 
 The warmup × 600000000000.com.
 
@@ -353,11 +353,11 @@ The warmup × 600000000000.com.
 TONIGHT.
 
 PEPEX PRAGUE × 600000000000.com warmup.
-Cross Club basement · 21:00 CET.
+Fuchs2 bar upstairs · Štvanice Island · 21:00 CET.
 
 📺 LIVE: pepevault.lol/live
 
-Get your 600000000000.com ticket. The Vault opens at the basement door 🐸
+Get your 600000000000.com ticket. The Vault opens upstairs 🐸
 ```
 
 ---
