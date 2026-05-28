@@ -1013,6 +1013,107 @@ p { max-width: 70ch; }
   margin-top: 0.5rem;
 }
 
+/* PEPORACLE — FAKE COMMONS celebration + Buy block (v41) */
+.fake-commons-banner {
+  background: linear-gradient(135deg, var(--pv-green) 0%, var(--pv-green-bright) 100%);
+  color: var(--pv-black);
+  padding: 1rem 1.3rem; border-radius: 8px;
+  margin-bottom: 0.4rem;
+  border: 2px solid var(--pv-green-dark);
+  position: relative;
+}
+.fake-commons-pill {
+  display: inline-block;
+  font-family: 'Bebas Neue'; font-size: 0.92rem; letter-spacing: 0.22em;
+  background: var(--pv-black); color: var(--pv-green-bright);
+  padding: 0.4rem 0.9rem; border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+.fake-commons-banner p {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.95rem; line-height: 1.5;
+  color: var(--pv-black); margin: 0;
+}
+.fake-commons-banner p strong { font-weight: 700; }
+.meta-pill.fake-commons-meta {
+  background: linear-gradient(135deg, var(--pv-green) 0%, var(--pv-green-bright) 100%);
+  color: var(--pv-black); font-weight: bold;
+  border: 1px solid var(--pv-green-dark);
+}
+.peporacle-buy-block {
+  background: linear-gradient(135deg, rgba(131,180,55,0.10) 0%, rgba(131,180,55,0.04) 100%);
+  border: 2px solid var(--pv-green);
+  border-radius: var(--radius-card);
+  padding: 1.4rem 1.6rem;
+  margin-top: 0.4rem;
+}
+.peporacle-buy-row {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 1.6rem; align-items: center;
+}
+@media (max-width: 720px) {
+  .peporacle-buy-row { grid-template-columns: 1fr; }
+  .peporacle-buy-qr { justify-self: center; }
+}
+.peporacle-buy-text { display: flex; flex-direction: column; gap: 0.55rem; }
+.peporacle-buy-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.85rem; letter-spacing: 0.22em;
+  color: var(--pv-green-bright); margin: 0;
+}
+.peporacle-buy-headline {
+  font-family: 'Bebas Neue';
+  font-size: clamp(1.4rem, 2.4vw, 1.7rem);
+  letter-spacing: 0.04em; color: var(--pv-white);
+  margin: 0; line-height: 1.15;
+}
+.peporacle-buy-sub {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.92rem; line-height: 1.5;
+  color: var(--pv-cream); opacity: 0.85; margin: 0;
+}
+.peporacle-buy-cta {
+  display: inline-block; background: var(--pv-green); color: var(--pv-black);
+  font-family: 'Bebas Neue'; font-size: 1.18rem; letter-spacing: 0.18em;
+  font-weight: bold; padding: 1.05rem 1.4rem; border-radius: 6px;
+  text-decoration: none; text-align: center;
+  box-shadow: 0 4px 0 var(--pv-green-dark);
+  transition: all 0.18s; margin-top: 0.4rem;
+  align-self: flex-start;
+}
+.peporacle-buy-cta:hover {
+  background: var(--pv-green-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--pv-green-dark);
+}
+.peporacle-wallet-warning {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: 0.85rem; line-height: 1.5;
+  color: var(--pv-cream);
+  margin-top: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(0,0,0,0.30);
+  border-left: 3px solid #d4a93a;
+  border-radius: 0 4px 4px 0;
+}
+.peporacle-wallet-warning a {
+  color: var(--pv-green-bright); text-decoration: underline; font-weight: 600;
+}
+.peporacle-wallet-warning strong { color: #f0c455; }
+.peporacle-buy-qr {
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.peporacle-buy-qr-img {
+  width: 150px; height: 150px; padding: 6px;
+  background: var(--pv-cream);
+  border-radius: 8px; border: 2px solid var(--pv-green);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  display: block;
+}
+.peporacle-buy-qr-cap {
+  font-family: 'Bebas Neue'; font-size: 0.8rem; letter-spacing: 0.20em;
+  color: var(--pv-green-bright); margin: 0;
+}
+
 /* BTC donate tertiary block */
 .btc-donate-block {
   background: var(--pv-ink); border: 1px dashed var(--pv-green-dark);
@@ -1391,17 +1492,24 @@ p { max-width: 70ch; }
         <p class="collectible-fineprint">+ Manifold fee · No end date · Open edition</p>
       </article>
 
-      <!-- ===== SECONDARY: PEPORACLE (Counterparty · Bitcoin) ===== -->
+      <!-- ===== SECONDARY: PEPORACLE (Counterparty · Bitcoin · FAKE COMMONS) ===== -->
       <article class="collectible-card secondary" id="peporacle">
+        <!-- FAKE COMMONS celebration banner -->
+        <div class="fake-commons-banner">
+          <span class="fake-commons-pill">★ OFFICIAL FAKE COMMONS</span>
+          <p>PEPORACLE has been formally accepted into the <strong>FAKE COMMONS</strong> — the official Counterparty community tier. It now sits alongside the canonical Rare Pepe / FAKERARES lineage as part of the on-chain Pepe family.</p>
+        </div>
+
         <span class="collectible-badge">Bitcoin · Counterparty</span>
         <p class="collectible-eyebrow">$PEPORACLE</p>
         <h3 class="collectible-title">THE ORACLE CARD</h3>
-        <p class="collectible-tagline">Live BTC data · Permanent on Arweave</p>
+        <p class="collectible-tagline">Live BTC data · Permanent on Arweave · FAKE COMMONS-tier</p>
         <p class="collectible-desc">An interactive Bitcoin Oracle Card minted on PepeVault. Real-time BTC data flows through the card. Hosted permanently on Arweave — the on-chain Bitcoin companion to the Hall of Memes.</p>
         <div class="collectible-meta">
           <span class="meta-pill">Counterparty</span>
           <span class="meta-pill">Bitcoin</span>
           <span class="meta-pill">by @ditacrypto</span>
+          <span class="meta-pill fake-commons-meta">★ FAKE COMMONS</span>
         </div>
         <iframe
           src="https://zsepczbet4eztlmp2jyf6eonxmwtj7wr33wwdymkfrzwz5grie5a.arweave.net/zIjxZCSfCZmtj9JwXxHNuy00_tHe7WHhiixzbPTRQTo"
@@ -1409,7 +1517,27 @@ p { max-width: 70ch; }
           loading="lazy"
           allowfullscreen
           style="width:100%;min-height:600px;border:0;border-radius:8px;background:var(--pv-black);margin:1rem 0;"></iframe>
-        <a class="collectible-cta secondary-link" href="https://cp20.tokenscan.io/asset/PEPORACLE" target="_blank" rel="noopener noreferrer">📜 View Counterparty Asset →</a>
+
+        <!-- BUY block -->
+        <div class="peporacle-buy-block">
+          <div class="peporacle-buy-row">
+            <div class="peporacle-buy-text">
+              <p class="peporacle-buy-eyebrow">🟢 NOW AVAILABLE</p>
+              <h4 class="peporacle-buy-headline">Buy PEPORACLE on pepe.wtf</h4>
+              <p class="peporacle-buy-sub">Featured in the official pepe.wtf drops marketplace. Tap the button or scan the QR with a Counterparty-aware wallet.</p>
+              <a class="peporacle-buy-cta" href="https://pepe.wtf/drops" target="_blank" rel="noopener noreferrer">▶ BUY ON PEPE.WTF →</a>
+              <div class="peporacle-wallet-warning">
+                <strong>⚠ Counterparty-aware wallet required.</strong> If you don't have one yet, get the official Counterparty wallet at <a href="https://freewallet.io" target="_blank" rel="noopener noreferrer">freewallet.io</a> — it's the recommended wallet for buying and holding XCP-issued assets like PEPORACLE.
+              </div>
+            </div>
+            <div class="peporacle-buy-qr">
+              <img class="peporacle-buy-qr-img" src="https://media.pepevault.lol/peporacle-buy-qr.webp" alt="Scan to buy PEPORACLE on pepe.wtf/drops" width="280" height="280" loading="lazy">
+              <p class="peporacle-buy-qr-cap">SCAN TO BUY</p>
+            </div>
+          </div>
+        </div>
+
+        <a class="collectible-cta secondary-link" href="https://pepe.wtf/asset/PEPORACLE" target="_blank" rel="noopener noreferrer">📜 View Asset Details on pepe.wtf →</a>
       </article>
 
     </div>
