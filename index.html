@@ -1114,6 +1114,119 @@ p { max-width: 70ch; }
   color: var(--pv-green-bright); margin: 0;
 }
 
+/* ============================================================
+   PEPORACLE MAIN STAGE (v42) — standalone full-width section
+   ============================================================ */
+.peporacle-main-stage {
+  position: relative; overflow: hidden;
+  padding: 4rem 0 4.5rem;
+  background: var(--pv-black);
+  border-top: 2px solid var(--pv-green-dark);
+  border-bottom: 2px solid var(--pv-green-dark);
+}
+.peporacle-stage-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(131,180,55,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, rgba(158,215,65,0.12) 0%, transparent 60%),
+    linear-gradient(180deg, var(--pv-black) 0%, #0f1a0e 50%, var(--pv-black) 100%);
+  animation: peporacle-bg-shift 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.peporacle-stage-container { position: relative; z-index: 1; max-width: 1080px; }
+
+.peporacle-stage-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.95rem; letter-spacing: 0.24em;
+  color: var(--pv-green-bright); text-align: center;
+  margin-bottom: 0.6rem; opacity: 0.92;
+}
+.peporacle-stage-title {
+  font-family: 'Bebas Neue';
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  letter-spacing: 0.02em; line-height: 0.92;
+  color: var(--pv-white); text-align: center;
+  margin: 0 0 1rem;
+  text-shadow: 0 0 24px rgba(131,180,55,0.45), 0 2px 0 rgba(0,0,0,0.6);
+}
+.peporacle-stage-subtitle {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5; color: var(--pv-cream);
+  text-align: center; max-width: 720px;
+  margin: 0 auto 1.4rem; opacity: 0.92;
+}
+.peporacle-stage-meta {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.55rem; margin: 0.8rem 0 1.4rem;
+}
+
+/* Shimmer sweep across the FAKE COMMONS banner */
+.fake-commons-banner.fake-commons-shimmer { position: relative; overflow: hidden; }
+.fake-commons-banner.fake-commons-shimmer::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.28) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: peporacle-banner-shimmer 4s ease-in-out infinite;
+}
+
+/* Live oracle iframe — gradient-bordered frame with pulsing glow */
+.peporacle-iframe-frame {
+  position: relative; border-radius: 12px; padding: 6px;
+  background: linear-gradient(135deg, var(--pv-green-dark) 0%, var(--pv-green) 50%, var(--pv-green-dark) 100%);
+  box-shadow: 0 0 0 1px rgba(131,180,55,0.4), 0 12px 36px rgba(0,0,0,0.45);
+  margin: 1.4rem 0;
+  animation: peporacle-iframe-glow 3.5s ease-in-out infinite alternate;
+}
+.peporacle-stage-iframe {
+  width: 100%; min-height: 640px; border: 0; border-radius: 8px;
+  background: var(--pv-black); display: block;
+}
+@media (max-width: 720px) { .peporacle-stage-iframe { min-height: 480px; } }
+
+.peporacle-stage-buy { margin-top: 1.4rem; }
+.peporacle-cta-pulse { animation: peporacle-cta-pulse 2.2s ease-in-out infinite; }
+
+.peporacle-stage-secondary {
+  display: block; margin: 1rem auto 0;
+  max-width: 420px; text-align: center;
+}
+
+/* Solo Hall of Memes after PEPORACLE moves out of Support the Movement */
+.collectible-grid.solo {
+  grid-template-columns: 1fr;
+  max-width: 660px;
+  margin-left: auto; margin-right: auto;
+}
+
+@keyframes peporacle-bg-shift {
+  0%   { transform: translateX(0) translateY(0); opacity: 1; }
+  50%  { transform: translateX(1.5%) translateY(-1%); opacity: 0.93; }
+  100% { transform: translateX(-1%) translateY(1%); opacity: 1; }
+}
+@keyframes peporacle-banner-shimmer {
+  0%   { transform: translateX(-100%); }
+  60%  { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes peporacle-iframe-glow {
+  0%   { box-shadow: 0 0 0 1px rgba(131,180,55,0.4), 0 12px 36px rgba(0,0,0,0.45); }
+  100% { box-shadow: 0 0 0 1px rgba(158,215,65,0.7), 0 12px 36px rgba(0,0,0,0.45), 0 0 32px rgba(131,180,55,0.35); }
+}
+@keyframes peporacle-cta-pulse {
+  0%, 100% { box-shadow: 0 4px 0 var(--pv-green-dark), 0 0 0 0 rgba(131,180,55,0.45); }
+  50%      { box-shadow: 0 4px 0 var(--pv-green-dark), 0 0 24px 6px rgba(131,180,55,0.35); }
+}
+
+/* Respect prefers-reduced-motion — disable all v42 animations */
+@media (prefers-reduced-motion: reduce) {
+  .peporacle-stage-bg,
+  .fake-commons-banner.fake-commons-shimmer::after,
+  .peporacle-iframe-frame,
+  .peporacle-cta-pulse {
+    animation: none !important;
+  }
+}
+
 /* BTC donate tertiary block */
 .btc-donate-block {
   background: var(--pv-ink); border: 1px dashed var(--pv-green-dark);
@@ -1392,6 +1505,60 @@ p { max-width: 70ch; }
   </div>
 </header>
 
+<!-- ===== PEPORACLE MAIN STAGE — Official FAKE COMMONS · Now on pepe.wtf (v42) ===== -->
+<section class="section peporacle-main-stage" id="peporacle">
+  <div class="peporacle-stage-bg" aria-hidden="true"></div>
+  <div class="container peporacle-stage-container">
+
+    <p class="peporacle-stage-eyebrow">★ THE INTERACTIVE BITCOIN ORACLE · OFFICIAL FAKE COMMON</p>
+    <h2 class="peporacle-stage-title">$PEPORACLE</h2>
+    <p class="peporacle-stage-subtitle">Real-time BTC data on a Counterparty-minted card. Permanent on Arweave. Now an exclusive drop on pepe.wtf — and for the first time, open to Ethereum collectors too.</p>
+
+    <div class="fake-commons-banner fake-commons-shimmer">
+      <span class="fake-commons-pill">★ OFFICIAL FAKE COMMONS</span>
+      <p>PEPORACLE has been formally accepted into the <strong>FAKE COMMONS</strong> — the official Counterparty community tier. It now sits alongside the canonical Rare Pepe / FAKERARES lineage as part of the on-chain Pepe family.</p>
+    </div>
+
+    <div class="peporacle-stage-meta">
+      <span class="meta-pill">Counterparty</span>
+      <span class="meta-pill">Bitcoin</span>
+      <span class="meta-pill">by @ditacrypto</span>
+      <span class="meta-pill fake-commons-meta">★ FAKE COMMONS</span>
+      <span class="meta-pill">Arweave-hosted</span>
+    </div>
+
+    <div class="peporacle-iframe-frame">
+      <iframe
+        src="https://zsepczbet4eztlmp2jyf6eonxmwtj7wr33wwdymkfrzwz5grie5a.arweave.net/zIjxZCSfCZmtj9JwXxHNuy00_tHe7WHhiixzbPTRQTo"
+        title="PEPORACLE — interactive Bitcoin oracle by DITACRYPTO"
+        loading="lazy"
+        allowfullscreen
+        class="peporacle-stage-iframe"></iframe>
+    </div>
+
+    <div class="peporacle-buy-block peporacle-stage-buy">
+      <div class="peporacle-buy-row">
+        <div class="peporacle-buy-text">
+          <p class="peporacle-buy-eyebrow">🟢 NOW AVAILABLE</p>
+          <h4 class="peporacle-buy-headline">Buy PEPORACLE on pepe.wtf</h4>
+          <p class="peporacle-buy-sub">Featured in the official pepe.wtf drops marketplace. Tap the button or scan the QR with a Counterparty-aware wallet.</p>
+          <a class="peporacle-buy-cta peporacle-cta-pulse" href="https://pepe.wtf/drops" target="_blank" rel="noopener noreferrer">▶ BUY ON PEPE.WTF →</a>
+          <div class="peporacle-wallet-warning">
+            <strong>⚠ Counterparty-aware wallet required.</strong> If you don't have one yet, get the official Counterparty wallet at <a href="https://freewallet.io" target="_blank" rel="noopener noreferrer">freewallet.io</a> — it's the recommended wallet for buying and holding XCP-issued assets like PEPORACLE.
+          </div>
+        </div>
+        <div class="peporacle-buy-qr">
+          <img class="peporacle-buy-qr-img" src="https://media.pepevault.lol/peporacle-buy-qr.webp" alt="Scan to buy PEPORACLE on pepe.wtf/drops" width="280" height="280" loading="lazy">
+          <p class="peporacle-buy-qr-cap">SCAN TO BUY</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="collectible-cta secondary-link peporacle-stage-secondary" href="https://pepe.wtf/asset/PEPORACLE" target="_blank" rel="noopener noreferrer">📜 View Asset Details on pepe.wtf →</a>
+
+  </div>
+</section>
+
 <!-- ===== MANIFESTO ===== -->
 <section class="section manifesto" id="manifesto">
   <div class="container">
@@ -1454,7 +1621,7 @@ p { max-width: 70ch; }
     <h2 style="text-align: center;">SUPPORT THE MOVEMENT</h2>
     <p class="support-intro">Pepe culture isn't a marketplace asset — it's a movement. Built by artists, kept alive by collectors, pushed forward by activations like the Vault. Collecting these two <strong>digital collectibles</strong> is the most direct way to support what we're doing. Every mint funds the next exhibition, the next print run, the next stage.</p>
 
-    <div class="collectible-grid">
+    <div class="collectible-grid solo">
 
       <!-- ===== PRIMARY: HALL OF MEMES (Manifold · Ethereum) ===== -->
       <article class="collectible-card primary">
@@ -1492,53 +1659,7 @@ p { max-width: 70ch; }
         <p class="collectible-fineprint">+ Manifold fee · No end date · Open edition</p>
       </article>
 
-      <!-- ===== SECONDARY: PEPORACLE (Counterparty · Bitcoin · FAKE COMMONS) ===== -->
-      <article class="collectible-card secondary" id="peporacle">
-        <!-- FAKE COMMONS celebration banner -->
-        <div class="fake-commons-banner">
-          <span class="fake-commons-pill">★ OFFICIAL FAKE COMMONS</span>
-          <p>PEPORACLE has been formally accepted into the <strong>FAKE COMMONS</strong> — the official Counterparty community tier. It now sits alongside the canonical Rare Pepe / FAKERARES lineage as part of the on-chain Pepe family.</p>
-        </div>
-
-        <span class="collectible-badge">Bitcoin · Counterparty</span>
-        <p class="collectible-eyebrow">$PEPORACLE</p>
-        <h3 class="collectible-title">THE ORACLE CARD</h3>
-        <p class="collectible-tagline">Live BTC data · Permanent on Arweave · FAKE COMMONS-tier</p>
-        <p class="collectible-desc">An interactive Bitcoin Oracle Card minted on PepeVault. Real-time BTC data flows through the card. Hosted permanently on Arweave — the on-chain Bitcoin companion to the Hall of Memes.</p>
-        <div class="collectible-meta">
-          <span class="meta-pill">Counterparty</span>
-          <span class="meta-pill">Bitcoin</span>
-          <span class="meta-pill">by @ditacrypto</span>
-          <span class="meta-pill fake-commons-meta">★ FAKE COMMONS</span>
-        </div>
-        <iframe
-          src="https://zsepczbet4eztlmp2jyf6eonxmwtj7wr33wwdymkfrzwz5grie5a.arweave.net/zIjxZCSfCZmtj9JwXxHNuy00_tHe7WHhiixzbPTRQTo"
-          title="PEPORACLE — interactive Bitcoin oracle by DITACRYPTO"
-          loading="lazy"
-          allowfullscreen
-          style="width:100%;min-height:600px;border:0;border-radius:8px;background:var(--pv-black);margin:1rem 0;"></iframe>
-
-        <!-- BUY block -->
-        <div class="peporacle-buy-block">
-          <div class="peporacle-buy-row">
-            <div class="peporacle-buy-text">
-              <p class="peporacle-buy-eyebrow">🟢 NOW AVAILABLE</p>
-              <h4 class="peporacle-buy-headline">Buy PEPORACLE on pepe.wtf</h4>
-              <p class="peporacle-buy-sub">Featured in the official pepe.wtf drops marketplace. Tap the button or scan the QR with a Counterparty-aware wallet.</p>
-              <a class="peporacle-buy-cta" href="https://pepe.wtf/drops" target="_blank" rel="noopener noreferrer">▶ BUY ON PEPE.WTF →</a>
-              <div class="peporacle-wallet-warning">
-                <strong>⚠ Counterparty-aware wallet required.</strong> If you don't have one yet, get the official Counterparty wallet at <a href="https://freewallet.io" target="_blank" rel="noopener noreferrer">freewallet.io</a> — it's the recommended wallet for buying and holding XCP-issued assets like PEPORACLE.
-              </div>
-            </div>
-            <div class="peporacle-buy-qr">
-              <img class="peporacle-buy-qr-img" src="https://media.pepevault.lol/peporacle-buy-qr.webp" alt="Scan to buy PEPORACLE on pepe.wtf/drops" width="280" height="280" loading="lazy">
-              <p class="peporacle-buy-qr-cap">SCAN TO BUY</p>
-            </div>
-          </div>
-        </div>
-
-        <a class="collectible-cta secondary-link" href="https://pepe.wtf/asset/PEPORACLE" target="_blank" rel="noopener noreferrer">📜 View Asset Details on pepe.wtf →</a>
-      </article>
+      <!-- PEPORACLE was promoted to its own main-stage section above (v42). See section.peporacle-main-stage at top of body. -->
 
     </div>
 
