@@ -1523,6 +1523,235 @@ p { max-width: 70ch; }
   .rg-placard-mark { font-size: 1.3rem; }
 }
 
+/* ============================================================
+   ZARDOZ SPEAKS — Classified after-hours screening (v44)
+   Eyes-only · By invitation · KEVIN holders + OG friends of Pepe
+   Deepest section before footer · No animation, just whispered tone
+   ============================================================ */
+.zardoz-speaks {
+  position: relative; overflow: hidden;
+  padding: 5rem 0 5.5rem;
+  background: #000;
+  border-top: 1px solid rgba(180, 130, 50, 0.18);
+  border-bottom: 1px solid rgba(180, 130, 50, 0.18);
+}
+.zd-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 30%, rgba(20, 14, 8, 0.5) 0%, #000 70%);
+}
+.zd-container {
+  position: relative; z-index: 1;
+  max-width: 760px;
+  text-align: center;
+}
+
+.zd-eyebrow {
+  font-family: 'Bebas Neue';
+  font-size: 0.85rem;
+  letter-spacing: 0.34em;
+  color: rgba(180, 130, 50, 0.6);
+  margin-bottom: 1.2rem;
+}
+
+.zd-title {
+  font-family: 'Bebas Neue';
+  font-size: clamp(2.6rem, 7.5vw, 5.5rem);
+  letter-spacing: 0.08em;
+  line-height: 0.9;
+  color: rgba(200, 150, 65, 0.95);
+  margin: 0 0 0.5rem;
+  text-shadow: 0 0 22px rgba(180, 130, 50, 0.22);
+}
+.zd-title-accent {
+  color: var(--pv-cream);
+  font-weight: 300;
+  letter-spacing: 0.14em;
+}
+
+.zd-subtitle {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(245, 239, 224, 0.6);
+  margin: 0 auto 2.4rem;
+  letter-spacing: 0.04em;
+}
+.zd-subtitle em { color: rgba(245, 239, 224, 0.88); font-style: italic; }
+
+.zd-hero {
+  position: relative;
+  margin: 0 auto 2rem;
+  max-width: 720px;
+  filter: drop-shadow(0 0 50px rgba(180, 130, 50, 0.15));
+}
+.zd-hero img {
+  width: 100%; height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.zd-decree {
+  max-width: 600px;
+  margin: 0 auto 2.6rem;
+  padding: 1.4rem 1.8rem;
+  border-left: 1px solid rgba(180, 130, 50, 0.35);
+  border-right: 1px solid rgba(180, 130, 50, 0.35);
+}
+.zd-decree p {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(245, 239, 224, 0.78);
+  margin: 0;
+}
+.zd-decree strong {
+  font-style: normal;
+  color: rgba(220, 220, 230, 1);
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.14em;
+  font-weight: normal;
+}
+
+.zd-redacted {
+  max-width: 540px;
+  margin: 0 auto 2.6rem;
+  padding: 1.4rem 1.6rem;
+  background: rgba(8, 8, 10, 0.9);
+  border: 1px solid rgba(180, 130, 50, 0.22);
+  border-radius: 2px;
+  text-align: left;
+}
+.zd-redacted-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed rgba(180, 130, 50, 0.10);
+}
+.zd-redacted-row:last-child { border-bottom: none; }
+.zd-redacted-label {
+  font-family: 'Bebas Neue';
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  color: rgba(180, 130, 50, 0.7);
+  min-width: 82px;
+  flex-shrink: 0;
+}
+.zd-redacted-bar {
+  font-family: 'Space Grotesk', monospace;
+  color: #000;
+  background: #000;
+  letter-spacing: 0.02em;
+  flex-grow: 1;
+  padding: 2px 4px;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.zd-redacted-value {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.85rem;
+  color: rgba(245, 239, 224, 0.78);
+  letter-spacing: 0.06em;
+  flex-grow: 1;
+}
+.zd-audience {
+  margin-top: 0.6rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(180, 130, 50, 0.22) !important;
+}
+.zd-audience-stamp {
+  color: rgba(220, 220, 230, 0.95) !important;
+  font-family: 'Bebas Neue' !important;
+  font-size: 0.86rem !important;
+  letter-spacing: 0.14em !important;
+}
+
+.zd-brutals {
+  max-width: 380px;
+  margin: 0 auto 2.6rem;
+  filter: drop-shadow(0 0 30px rgba(180, 130, 50, 0.1));
+}
+.zd-brutals img {
+  width: 100%; height: auto;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid rgba(180, 130, 50, 0.15);
+}
+.zd-brutals figcaption {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(245, 239, 224, 0.55);
+  margin-top: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.zd-entry {
+  max-width: 520px;
+  margin: 0 auto 2.4rem;
+  padding: 1.4rem 1.6rem;
+  background: rgba(180, 130, 50, 0.04);
+  border: 1px solid rgba(180, 130, 50, 0.28);
+  border-radius: 2px;
+}
+.zd-entry p {
+  font-family: 'Source Serif Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(245, 239, 224, 0.72);
+  margin: 0 0 0.6rem;
+  line-height: 1.5;
+}
+.zd-entry-action {
+  font-family: 'Bebas Neue' !important;
+  font-style: normal !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.12em;
+  color: rgba(200, 150, 65, 0.95) !important;
+  margin-bottom: 0 !important;
+  line-height: 1.5 !important;
+}
+.zd-entry-action a {
+  color: var(--pv-cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(180, 130, 50, 0.5);
+  text-underline-offset: 4px;
+  transition: color 0.18s, text-decoration-color 0.18s;
+}
+.zd-entry-action a:hover {
+  color: rgba(220, 170, 80, 1);
+  text-decoration-color: rgba(220, 170, 80, 1);
+}
+.zd-entry-action strong {
+  color: rgba(220, 220, 230, 0.95);
+  font-family: 'Bebas Neue';
+  font-weight: normal;
+  letter-spacing: 0.16em;
+}
+
+.zd-closing {
+  font-family: 'Bebas Neue';
+  font-size: 0.85rem;
+  letter-spacing: 0.32em;
+  color: rgba(180, 130, 50, 0.5);
+  text-align: center;
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed rgba(180, 130, 50, 0.15);
+}
+
+@media (max-width: 640px) {
+  .zardoz-speaks { padding: 4rem 0 4.5rem; }
+  .zd-redacted-label { min-width: 68px; font-size: 0.72rem; }
+  .zd-redacted-value { font-size: 0.78rem; }
+  .zd-decree { padding: 1.1rem 1.2rem; }
+  .zd-decree p { font-size: 0.95rem; }
+  .zd-eyebrow { letter-spacing: 0.24em; }
+}
+
 /* BTC donate tertiary block */
 .btc-donate-block {
   background: var(--pv-ink); border: 1px dashed var(--pv-green-dark);
@@ -2384,6 +2613,68 @@ p { max-width: 70ch; }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== ZARDOZ SPEAKS — Classified after-hours screening (v44) ===== -->
+<!-- Deepest section before the footer. KEVIN STAMP holders + OG friends of Pepe only. -->
+<!-- No public RSVP. No date/venue leak. Whisper @PepeVault1. -->
+<section class="section zardoz-speaks" id="zardoz">
+  <div class="zd-bg" aria-hidden="true"></div>
+  <div class="container zd-container">
+
+    <p class="zd-eyebrow">★ CLASSIFIED · EYES ONLY · BY INVITATION</p>
+
+    <h2 class="zd-title">ZARDOZ <span class="zd-title-accent">SPEAKS</span></h2>
+
+    <p class="zd-subtitle">An after-hours screening · Lisbon · <em>date and venue withheld</em></p>
+
+    <div class="zd-hero">
+      <img src="https://media.pepevault.lol/zardoz-kevin-head.webp" alt="A floating Zardoz head wearing the KEVIN stamp face — speaking to his chosen ones" loading="lazy" width="1024" height="577">
+    </div>
+
+    <div class="zd-decree">
+      <p>"Zardoz speaks to you, his chosen ones. For one night, in a room without a number, the head will hover and the screen will flicker. The Brutals are not welcome — unless their bandoliers bear <strong>KEVIN</strong>."</p>
+    </div>
+
+    <div class="zd-redacted" role="group" aria-label="Screening details — redacted">
+      <div class="zd-redacted-row">
+        <span class="zd-redacted-label">DATE</span>
+        <span class="zd-redacted-bar">████████████████████████</span>
+      </div>
+      <div class="zd-redacted-row">
+        <span class="zd-redacted-label">VENUE</span>
+        <span class="zd-redacted-bar">████████████████████████</span>
+      </div>
+      <div class="zd-redacted-row">
+        <span class="zd-redacted-label">DOOR</span>
+        <span class="zd-redacted-bar">████████████████████████</span>
+      </div>
+      <div class="zd-redacted-row">
+        <span class="zd-redacted-label">RUNTIME</span>
+        <span class="zd-redacted-value">105 MIN · 1974 · BOORMAN</span>
+      </div>
+      <div class="zd-redacted-row zd-audience">
+        <span class="zd-redacted-label">AUDIENCE</span>
+        <span class="zd-redacted-value zd-audience-stamp">▮▮ KEVIN HOLDERS · OG FRIENDS OF PEPE ▮▮</span>
+      </div>
+    </div>
+
+    <figure class="zd-brutals">
+      <img src="https://media.pepevault.lol/zardoz-pepe-brutals.webp" alt="Two Pepe-faced Brutals in red bandoliers — the chosen, dispatched into the country" loading="lazy" width="809" height="1024">
+      <figcaption>The chosen — already received the transmission.</figcaption>
+    </figure>
+
+    <div class="zd-entry">
+      <p>To present yourself for consideration —</p>
+      <p class="zd-entry-action">
+        WHISPER <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@PEPEVAULT1</a>.<br>
+        Reveal your <strong>KEVIN</strong>. Or have your friends speak for you.
+      </p>
+    </div>
+
+    <p class="zd-closing">The Vault is good · The Vault is alive.</p>
+
   </div>
 </section>
 
