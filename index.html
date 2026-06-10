@@ -7,17 +7,17 @@
 <meta name="description" content="PepeVault is the traveling exhibition for real on-chain Pepe lore — Rare Pepes, FAKERARES, Notable Pepes, Bitcoin Stamps, and the artists who built it since 2016.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PepeVault — Real Pepe Lore, On-Chain">
-<meta property="og:description" content="The traveling exhibition for real on-chain Pepe lore. Rare Pepes · FAKERARES · Notable Pepes · Bitcoin Stamps. Three nights: NFC Lisbon June 4-6 · Stampfest 3 (Stampchain.io) · PEPEX Prague June 11.">
-<meta property="og:image" content="https://media.pepevault.lol/hero-cover.webp">
-<meta property="og:image:width" content="1500">
-<meta property="og:image:height" content="500">
+<meta property="og:description" content="PEPEX Prague — June 11 at Fuchs2, Štvanice Island. A live immersive Pepe experience, FAKE DJ PEPE b2b ARWYN 7–10PM, and a Rare Pepe trading card for a photo with DJ Pepe. The Lisbon run (NFC + Stampfest 3) is in the books.">
+<meta property="og:image" content="https://media.pepevault.lol/prague-stage-keyart.webp">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="857">
 <meta property="og:site_name" content="PepeVault">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@pepevault1">
 <meta name="twitter:creator" content="@pepevault1">
 <meta name="twitter:title" content="PepeVault — Real Pepe Lore, On-Chain">
-<meta name="twitter:description" content="Real Pepes. Real Artists. Real Chaos. Three nights: NFC Lisbon · Stampfest 3 · PEPEX Prague.">
-<meta name="twitter:image" content="https://media.pepevault.lol/hero-cover.webp">
+<meta name="twitter:description" content="PEPEX Prague — tomorrow at Fuchs2. Live immersive experience · FAKE DJ PEPE b2b ARWYN 7–10PM · snap with DJ Pepe, grab a Rare Pepe card. Lisbon is in the books.">
+<meta name="twitter:image" content="https://media.pepevault.lol/prague-stage-keyart.webp">
 
 <!-- Schema.org Event markup for SEO once on custom domain -->
 <script type="application/ld+json">
@@ -75,7 +75,7 @@
     {
       "@type": "Event",
       "name": "PEPEX Prague 2026",
-      "startDate": "2026-06-11T21:00:00+02:00",
+      "startDate": "2026-06-11T19:00:00+02:00",
       "endDate": "2026-06-12T02:00:00+02:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
@@ -96,7 +96,7 @@
         }
       },
       "image": "https://media.pepevault.lol/pepex-prague-keyart.webp",
-      "description": "PepeVault activation as warmup for the 600000000000.com party at Fuchs2 (bar upstairs) on Štvanice Island during BTC Prague week. Industrial venue, AV stage, full livestream from pepevault.lol/live.",
+      "description": "PepeVault activation and warmup for the 600000000000.com party — bar upstairs at Fuchs2 on Štvanice Island during BTC Prague week. A live immersive Pepe experience, FAKE DJ PEPE back-to-back with ARWYN from 7–10PM, and a Rare Pepe trading card for anyone who grabs a photo with DJ Pepe. Full livestream from pepevault.lol/live.",
       "organizer": [
         { "@type": "Organization", "name": "PepeVault", "url": "https://pepevault.lol" },
         { "@type": "Organization", "name": "600000000000.com", "url": "https://600000000000.com/" }
@@ -194,8 +194,7 @@
   --pv-terra: #C2622C;
   --pv-amber: #E8A33C;
   --pv-white: #FFFFFF;
-  --pv-gray: #8A8A82;
-  --pv-divider: rgba(131, 180, 55, 0.22);
+  --pv-gray: #8A8A82;\n  --pv-red: #E63946;\n  --pv-divider: rgba(131, 180, 55, 0.22);
   --shadow-soft: 0 8px 28px rgba(14, 15, 12, 0.18);
   --shadow-firm: 0 14px 40px rgba(14, 15, 12, 0.22);
   --radius-card: 8px;
@@ -1992,6 +1991,115 @@ p { max-width: 70ch; }
 .pv-pin::after { content: ''; position: absolute; top: 5px; left: 5px; width: 16px; height: 16px; border-radius: 50%; background: var(--pv-black); }
 .twitter-timeline-wrap { margin-top: 1.5rem; max-width: 100%; }
 .twitter-timeline-wrap iframe { border-radius: 12px !important; }
+
+/* ===================================================================
+   v49 — PRAGUE PIVOT + LISBON ARCHIVE
+   =================================================================== */
+
+/* ===== PRAGUE MAIN STAGE ===== */
+.prague-stage {
+  position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #0b0c09 0%, var(--pv-black) 55%, #0b0c09 100%);
+  border-top: 2px solid var(--pv-green-dark);
+  border-bottom: 2px solid var(--pv-green-dark);
+}
+.prague-stage-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(900px 440px at 50% -10%, rgba(131,180,55,0.20), transparent 70%),
+    radial-gradient(720px 380px at 10% 112%, rgba(232,163,60,0.10), transparent 72%);
+}
+.prague-stage-container { position: relative; z-index: 1; text-align: center; }
+.prague-tomorrow-badge {
+  display: inline-block; background: var(--pv-red); color: var(--pv-white);
+  font-family: 'Bebas Neue'; letter-spacing: 0.2em; font-size: 1.05rem;
+  padding: 0.42rem 1.15rem; border-radius: var(--radius-pill); margin-bottom: 1.1rem;
+  box-shadow: 0 6px 22px rgba(230,57,70,0.38);
+  animation: prague-badge-pulse 2.4s ease-in-out infinite;
+}
+@keyframes prague-badge-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.prague-stage-eyebrow {
+  font-family: 'Bebas Neue'; font-size: 0.95rem; letter-spacing: 0.32em;
+  color: var(--pv-green-bright); margin-bottom: 0.55rem;
+}
+.prague-stage-title {
+  font-size: clamp(3rem, 9vw, 7rem); color: var(--pv-white);
+  text-shadow: 0 0 40px rgba(131,180,55,0.30);
+}
+.prague-stage-sub {
+  font-family: 'Bebas Neue'; font-size: clamp(1.15rem, 2.4vw, 1.75rem);
+  letter-spacing: 0.08em; color: var(--pv-cream); margin-top: 0.5rem;
+}
+.prague-keyart-frame {
+  margin: 2.1rem auto 0; max-width: 1040px;
+  border: 2px solid var(--pv-green); border-radius: var(--radius-card);
+  overflow: hidden; box-shadow: var(--shadow-firm);
+}
+.prague-keyart { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.prague-activations {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
+  margin-top: 2.4rem; text-align: left;
+}
+.prague-activation {
+  background: var(--pv-ink); border: 1.5px solid var(--pv-green-dark);
+  border-radius: var(--radius-card); padding: 1.6rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  transition: border-color .18s, transform .18s;
+}
+.prague-activation:hover { border-color: var(--pv-green); transform: translateY(-3px); }
+.pa-icon { font-size: 2rem; line-height: 1; }
+.pa-title { font-family: 'Bebas Neue'; font-size: 1.6rem; letter-spacing: 0.03em; color: var(--pv-green-bright); line-height: 1.02; }
+.pa-time { font-family: 'Bebas Neue'; font-size: 1.05rem; letter-spacing: 0.14em; color: var(--pv-amber); }
+.pa-desc { font-size: 0.96rem; color: var(--pv-cream); line-height: 1.5; }
+.prague-detail-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem;
+  margin-top: 2.4rem; text-align: left; align-items: start;
+}
+.prague-venue-name { font-family: 'Bebas Neue'; font-size: 1.5rem; color: var(--pv-white); letter-spacing: 0.05em; }
+.prague-venue-addr { font-size: 0.95rem; color: var(--pv-gray); line-height: 1.45; }
+.prague-timing { font-family: 'Bebas Neue'; letter-spacing: 0.08em; color: var(--pv-green-bright); font-size: 1.02rem; margin-top: 0.7rem; }
+.prague-cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.8rem; justify-content: center; }
+@media (max-width: 920px) {
+  .prague-activations { grid-template-columns: 1fr; }
+  .prague-detail-row { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .prague-tomorrow-badge { animation: none !important; } }
+
+/* ===== LISBON RECAP — archive ===== */
+.lisbon-recap { background: linear-gradient(180deg, var(--pv-black), #0c0d0a); }
+.lisbon-recap-head { text-align: center; margin-bottom: 2.4rem; }
+.lisbon-recap-head .eyebrow { color: var(--pv-amber); }
+.lisbon-recap-head h2 { color: var(--pv-cream); }
+.lisbon-recap-sub { max-width: 660px; margin: 0.6rem auto 0; color: var(--pv-gray); font-size: 1.02rem; line-height: 1.55; }
+.lisbon-events { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.event-card.past { border-color: rgba(138,138,130,0.45); box-shadow: none; }
+.event-card.past .event-keyart { filter: grayscale(0.55) brightness(0.82); }
+.event-card.past .event-card-label { background: rgba(138,138,130,0.92); color: var(--pv-black); }
+.event-card.past h3 { color: var(--pv-cream); }
+.event-card.past .event-date { color: var(--pv-gray); }
+.lisbon-wrap-stamp {
+  display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; margin-top: auto;
+  background: rgba(131,180,55,0.12); color: var(--pv-green-bright); border: 1px solid var(--pv-green-dark);
+  font-family: 'Bebas Neue'; letter-spacing: 0.12em; font-size: 0.95rem;
+  padding: 0.5rem 0.9rem; border-radius: var(--radius-pill);
+}
+.lisbon-extras { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 1.8rem; }
+.lisbon-gift, .lisbon-zardoz { border-radius: var(--radius-card); padding: 1.5rem; display: flex; gap: 1.2rem; align-items: center; }
+.lisbon-gift { background: var(--pv-ink); border: 1.5px solid var(--pv-green-dark); }
+.lisbon-gift img { width: 92px; height: 92px; border-radius: 8px; flex-shrink: 0; object-fit: contain; background: #000; }
+.lisbon-zardoz { background: #000; border: 1px solid rgba(180,130,50,0.42); }
+.lisbon-zardoz img { width: 100px; height: 56px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.lg-eyebrow { font-family: 'Bebas Neue'; letter-spacing: 0.16em; font-size: 0.8rem; color: var(--pv-green-bright); }
+.lg-title { font-family: 'Bebas Neue'; font-size: 1.45rem; color: var(--pv-white); line-height: 1; margin: 0.15rem 0 0.4rem; }
+.lg-desc { font-size: 0.88rem; color: var(--pv-cream); line-height: 1.5; }
+.lg-desc a { color: var(--pv-green-bright); white-space: nowrap; }
+.lz-eyebrow { font-family: 'Bebas Neue'; letter-spacing: 0.16em; font-size: 0.78rem; color: rgba(200,160,90,0.95); }
+.lz-title { font-family: 'Bebas Neue'; font-size: 1.45rem; color: rgba(222,212,196,0.95); line-height: 1; margin: 0.15rem 0 0.4rem; }
+.lz-desc { font-size: 0.86rem; color: rgba(192,186,176,0.9); line-height: 1.5; font-style: italic; }
+@media (max-width: 920px) {
+  .lisbon-events { grid-template-columns: 1fr; }
+  .lisbon-extras { grid-template-columns: 1fr; }
+}
 </style>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
@@ -2007,7 +2115,7 @@ p { max-width: 70ch; }
     <a href="#manifesto">Manifesto</a>
     <a href="#lineup">Lineup</a>
     <a href="#roster">Roster</a>
-    <a href="#events">Events</a>
+    <a href="#prague">Prague</a>
     <a href="/live" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--pv-red); animation: pulse-dot 1.5s ease-in-out infinite;"></span>WATCH LIVE</a>
     <a href="#support">Collect</a>
     <a href="#sponsors">Sponsors</a>
@@ -2022,13 +2130,74 @@ p { max-width: 70ch; }
   <div class="container hero-content">
     <p class="eyebrow">The Traveling Pepe Exhibition</p>
     <h1>REAL <span class="accent">PEPES</span><br>REAL ARTISTS<br>REAL CHAOS.</h1>
-    <p class="hero-tag">RARE PEPES · FAKERARES · NOTABLE PEPES · BITCOIN STAMPS · &amp; MORE. The 2016 lore, alive in 2026. Lisbon. Prague. The world after that.</p>
+    <p class="hero-tag">RARE PEPES · FAKERARES · NOTABLE PEPES · BITCOIN STAMPS · &amp; MORE. The 2016 lore, alive in 2026. Lisbon is in the books — next stop Prague, tomorrow night.</p>
     <div class="hero-cta-row">
-      <a href="#events" class="btn btn-primary">⚡ See the Activations</a>
+      <a href="#prague" class="btn btn-primary">⚡ Prague · Tomorrow Night</a>
       <a href="#roster" class="btn btn-secondary">Meet the Roster</a>
     </div>
   </div>
 </header>
+
+<!-- ===== PRAGUE MAIN STAGE — Tomorrow night · PEPEX Prague (v49) ===== -->
+<section class="section prague-stage" id="prague">
+  <div class="prague-stage-bg" aria-hidden="true"></div>
+  <div class="container prague-stage-container">
+
+    <span class="prague-tomorrow-badge">● TOMORROW NIGHT</span>
+    <p class="prague-stage-eyebrow">★ NEXT STOP · BTC PRAGUE WEEK</p>
+    <h2 class="prague-stage-title">PEPEX PRAGUE</h2>
+    <p class="prague-stage-sub">Thursday, June 11 · Fuchs2 · Bar Upstairs · Štvanice Island</p>
+
+    <div class="prague-keyart-frame">
+      <img class="prague-keyart" src="https://media.pepevault.lol/prague-stage-keyart.webp" alt="PEPEX Prague — two Pepe DJs back-to-back behind a glowing booth inside an industrial riverside venue on Štvanice Island, Rare Pepe cards projected across the walls, a frog crowd dancing" width="1536" height="857" fetchpriority="high" decoding="async">
+    </div>
+
+    <div class="prague-activations">
+      <article class="prague-activation">
+        <span class="pa-icon" aria-hidden="true">🎭</span>
+        <h3 class="pa-title">The PepeVault Live Immersive Experience</h3>
+        <p class="pa-desc">Step inside the Vault. Rare Pepes, FAKERARES, Notable Pepes and Bitcoin Stamps projected wall-to-wall in a living immersive room — the whole 2016 lore, all around you.</p>
+      </article>
+      <article class="prague-activation">
+        <span class="pa-icon" aria-hidden="true">🎧</span>
+        <h3 class="pa-title">Fake DJ Pepe <span style="color:var(--pv-cream);">b2b</span> ARWYN</h3>
+        <p class="pa-time">7 PM → 10 PM · BACK-TO-BACK</p>
+        <p class="pa-desc">Three hours, two decks, no breaks. The Vault's own FAKE DJ PEPE trades sets back-to-back with ARWYN — co-founder of Bitcoin Stamps — to warm the island up.</p>
+      </article>
+      <article class="prague-activation">
+        <span class="pa-icon" aria-hidden="true">📸</span>
+        <h3 class="pa-title">Snap with DJ Pepe · Collect a Rare Pepe</h3>
+        <p class="pa-desc">Get your picture taken with DJ Pepe on the night and walk away with a Rare Pepe trading card. One frog, one photo, one card — while they last.</p>
+      </article>
+    </div>
+
+    <div class="prague-detail-row">
+      <div>
+        <p class="prague-stage-eyebrow" style="text-align:left;color:var(--pv-amber);">The Venue</p>
+        <p class="prague-venue-name">Fuchs2 · Bar Upstairs</p>
+        <p class="prague-venue-addr">Ostrov Štvanice<br>170 00 Praha 7-Holešovice · Czechia</p>
+        <p class="prague-timing">VAULT OPENS 7 PM · DJ SET 7–10 PM · PARTY FLOWS DOWNSTAIRS AFTER</p>
+        <div class="attend-notice" style="margin-top:1.4rem;">
+          <div class="ticket-icon">⚡</div>
+          <div>
+            <h4>PEPEVAULT ENTRY IS FREE.</h4>
+            <p>We set up in the bar upstairs at Fuchs2 — the warmup for the <strong>600000000000.com</strong> party downstairs. You'll need a host party ticket to get in the door; the Vault itself is free.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <iframe class="event-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=14.430%2C50.092%2C14.443%2C50.098&amp;layer=mapnik&amp;marker=50.0951773%2C14.4363731" title="Fuchs2 · Štvanice Island · Prague map"></iframe>
+      </div>
+    </div>
+
+    <div class="prague-cta-row">
+      <a href="https://600000000000.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">⚡ Get 600000000000.com Tickets →</a>
+      <a href="/live" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--pv-red);animation:pulse-dot 1.5s ease-in-out infinite;"></span>📺 Watch the Live Stream →</a>
+      <a href="#tickets" class="btn btn-secondary">🎫 Grab a Fake Ticket</a>
+    </div>
+
+  </div>
+</section>
 
 <!-- ===== PEPORACLE MAIN STAGE — Official FAKE COMMONS · Now on pepe.wtf (v42) ===== -->
 <section class="section peporacle-main-stage" id="peporacle">
@@ -2136,66 +2305,6 @@ p { max-width: 70ch; }
   </div>
 </section>
 
-<!-- ===== RARE GALLOS — Live unveiling teaser · NFC Lisbon (v43) ===== -->
-<section class="section rare-gallos-stage" id="rare-gallos">
-  <div class="rare-gallos-bg" aria-hidden="true"></div>
-  <div class="container rare-gallos-container">
-
-    <p class="rare-gallos-eyebrow">★ COMING SOON · LIVE UNVEILING · NFC LISBON</p>
-    <h2 class="rare-gallos-title">RARE GALLOS</h2>
-    <p class="rare-gallos-subtitle">A Lisbon offering — by <strong>Zed × Arwyn</strong></p>
-
-    <div class="rare-gallos-meta">
-      <span class="meta-pill">Counterparty</span>
-      <span class="meta-pill">Sub-collection</span>
-      <span class="meta-pill">Lisbon homage</span>
-      <span class="meta-pill">Galo de Barcelos</span>
-    </div>
-
-    <!-- The stage frame: gold valance, parted velvet curtains, checkerboard floor receding into perspective, "Awaiting Unveiling" placard floating in the gap. NO artwork shown until live reveal. -->
-    <div class="rare-gallos-stage-frame" aria-label="Rare Gallos — awaiting live unveiling at NFC Lisbon">
-      <div class="rg-floor" aria-hidden="true"></div>
-      <div class="rg-curtain left" aria-hidden="true"></div>
-      <div class="rg-curtain right" aria-hidden="true"></div>
-      <div class="rg-valance" aria-hidden="true"></div>
-      <div class="rg-placard">
-        <span class="rg-placard-mark">⚜ AWAITING UNVEILING ⚜</span>
-        <p class="rg-placard-title">RARE GALLOS</p>
-        <p class="rg-placard-sub">NFC Lisbon · June 4–6, 2026</p>
-      </div>
-    </div>
-
-    <div class="rare-gallos-lore">
-      <p>In the north of Portugal, in a town called <strong>Barcelos</strong>, a roasted rooster rose from a judge's table and crowed for a condemned pilgrim — proving his innocence at the gallows. The <strong>Galo de Barcelos</strong> still watches over Portuguese thresholds as a sign of <em>faith</em>, <em>justice</em>, and <em>good fortune</em>.</p>
-      <p>For NFC Lisbon, <strong>Zed</strong> and <strong>Arwyn</strong> have stitched the black rooster into the Pepe lineage — a sub-collection waiting inside a notorious larger drop, both yet to be named.</p>
-      <p class="rare-gallos-lore-close">Two versions, one moment · The unveiling happens live.</p>
-    </div>
-
-    <div class="rare-gallos-sale-row">
-
-      <div class="rare-gallos-sale-card">
-        <p class="rare-gallos-sale-eyebrow">⚡ ONE OF ONE</p>
-        <h4 class="rare-gallos-sale-title">The hand-inked 1/1</h4>
-        <p class="rare-gallos-sale-sub">The original black-and-white piece — going live for sale on <strong>cbay</strong> during the event.</p>
-        <a class="rg-cta rg-cta-cbay" href="https://www.cbay.ing/" target="_blank" rel="noopener noreferrer" aria-label="Visit cbay marketplace">
-          <span class="cbay-mark"><span class="cbay-c">c</span><span class="cbay-b">b</span><span class="cbay-a">a</span><span class="cbay-y">y</span></span>
-          <span class="cbay-arrow">→</span>
-        </a>
-        <p class="rare-gallos-sale-fineprint">cbay.ing — peer-to-peer crypto marketplace · BTC · ETH · BASE · LTC · XMR</p>
-      </div>
-
-      <div class="rare-gallos-sale-card">
-        <p class="rare-gallos-sale-eyebrow">⚡ OPEN EDITION</p>
-        <h4 class="rare-gallos-sale-title">The colour drop</h4>
-        <p class="rare-gallos-sale-sub">The painted Portuguese-flag version — <em>likely</em> dropping on <strong>pepe.wtf</strong> alongside the unveiling. Final platform confirmed at reveal.</p>
-        <a class="rg-cta rg-cta-drop" href="https://pepe.wtf/drops" target="_blank" rel="noopener noreferrer">▶ Drops on pepe.wtf →</a>
-        <p class="rare-gallos-sale-fineprint">⚠ Counterparty-aware wallet required (<a href="https://freewallet.io" target="_blank" rel="noopener noreferrer">freewallet.io</a>)</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 <!-- ===== SUPPORT THE MOVEMENT — digital collectibles ===== -->
 <section class="section support" id="support">
@@ -2263,135 +2372,68 @@ p { max-width: 70ch; }
   </div>
 </section>
 
-<!-- ===== LATOMONFC PROOF-OF-ATTENDANCE ===== -->
-<section class="section latomonfc" id="latomonfc">
+
+<!-- ===== THE LISBON RUN — archive / recap (v49, replaces the old live Events + LATOMONFC + Zardoz sections) ===== -->
+<section class="section lisbon-recap" id="lisbon">
   <div class="container">
-    <p class="eyebrow center" style="text-align: center;">A Gift from the Family · Counterparty</p>
-    <h2 style="text-align: center;">PROOF OF ATTENDANCE</h2>
-    <p class="latomonfc-sub">A Counterparty asset offered to the PepeVault community at NFC Lisbon — courtesy of <strong>Nicolas Sierro</strong>, OG of the 2016 Counterparty movement.</p>
-
-    <div class="latomonfc-grid">
-      <div class="latomonfc-cover">
-        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/latomonfc-asset.gif" alt="LATOMONFC — canonical on-chain Counterparty asset artwork by Nicolas Sierro. Three periodic-table tiles animating in: Nitrogen (N), Fluorine (F), Carbon (C) — spelling NFC.">
-        <p class="latomonfc-cover-caption">$LATOMONFC · canonical on-chain artwork</p>
-      </div>
-
-      <div class="latomonfc-body">
-        <p class="latomonfc-eyebrow">$LATOMONFC</p>
-        <h3 class="latomonfc-title">The Lisbon POAP</h3>
-        <p class="latomonfc-tagline">For the people who actually show up.</p>
-
-        <p class="latomonfc-desc">Two years ago, <strong>Shaban of EverdreamSoft</strong> — the studio behind <em>Spells of Genesis</em> and <em>Orbital</em> — kicked off the original wave of Counterparty asset activations and airdrops at NFC Lisbon. For that moment, <strong>Nicolas Sierro</strong> issued <strong>LATOMONFC</strong>: a proof-of-attendance asset on Counterparty, chain-permanent, lore-coded.</p>
-
-        <p class="latomonfc-desc">Nicolas is back, and he's offering LATOMONFC to <strong>our community</strong> at NFC Lisbon 2026. A small Bitcoin-native token of the night you showed up. Pure community, pure lineage, pure Counterparty.</p>
-
-        <div class="latomonfc-meta">
-          <span class="meta-pill">Counterparty</span>
-          <span class="meta-pill">Bitcoin · On-chain</span>
-          <span class="meta-pill">NFC Lisbon · Jun 4–6</span>
-          <span class="meta-pill">by @NicolasSierro</span>
-        </div>
-
-        <div class="latomonfc-callout">
-          <span class="callout-flag">⚡ How to claim</span>
-          <ol class="callout-steps">
-            <li><strong>Show up at the Vault</strong> any day of NFC Lisbon (Jun 4–6). Find a PepeVault crew member or <a href="https://x.com/ditacrypto" target="_blank" rel="noopener noreferrer">@ditacrypto</a> — we'll write down your Counterparty address (and your handle if you'd like a shout-out).</li>
-            <li><strong>One per wallet.</strong> Nicolas checks against prior NFC editions — if you already hold LATOMONFC from a previous year, you're already set.</li>
-            <li><strong>~1 week after Lisbon closes</strong>, Nicolas airdrops LATOMONFC to every verified address.</li>
-          </ol>
-          <p class="callout-footer">Questions? Ping <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@pepevault1</a> or <a href="https://x.com/NicolasSierro" target="_blank" rel="noopener noreferrer">@NicolasSierro</a>.</p>
-        </div>
-
-        <div class="latomonfc-ctas">
-          <a class="btn btn-primary" href="https://tokenscan.io/asset/LATOMONFC" target="_blank" rel="noopener noreferrer">📜 View LATOMONFC on Counterparty →</a>
-          <a class="btn btn-secondary" href="https://blockchainizator.com/#atm" target="_blank" rel="noopener noreferrer">⚗️ Visit Atomo Collection →</a>
-        </div>
-
-        <p class="latomonfc-credit">Lineage: <strong>Shaban</strong> · EverdreamSoft · Spells of Genesis · Orbital · Counterparty.<br>Issued by <strong>Nicolas Sierro</strong> — see his profile in <a href="#roster">the Vault roster</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== EVENTS ===== -->
-<section class="section events" id="events">
-  <div class="container">
-    <p class="eyebrow center" style="text-align: center;">2026 Activations</p>
-    <h2 style="text-align: center;">TWO CITIES. THREE NIGHTS. ONE VAULT.</h2>
-    <p class="events-sub">Real venues. Real tickets. Real lore.</p>
-
-    <div class="attend-notice">
-      <div class="ticket-icon">⚡</div>
-      <div>
-        <h4>HEADS UP — PEPEVAULT ENTRY IS FREE.</h4>
-        <p>Each PepeVault activation runs <strong>inside a separately-ticketed host event</strong>. You'll need a ticket from the host below to walk into the Vault. Once you're in: free, frog army energy, no charge from us.</p>
-      </div>
+    <div class="lisbon-recap-head">
+      <p class="eyebrow">June 4–6 · In The Books</p>
+      <h2>THE LISBON RUN</h2>
+      <p class="lisbon-recap-sub">Three nights at NFC Summit — the gallery by day, Stampfest after dark. The Vault landed in Lisbon and the frogs showed up. Here's what went down.</p>
     </div>
 
-    <div class="events-grid">
-      <article class="event-card">
-        <div class="event-card-label">JUN 4–6</div>
-        <img decoding="async" loading="lazy" class="event-keyart" src="https://media.pepevault.lol/nfc-lisbon-keyart.webp" alt="NFC Lisbon Key Art">
+    <div class="lisbon-events">
+      <article class="event-card past">
+        <div class="event-card-label">✓ JUN 4–6</div>
+        <img decoding="async" loading="lazy" class="event-keyart" src="https://media.pepevault.lol/nfc-lisbon-keyart.webp" alt="NFC Lisbon key art">
         <div class="event-body">
           <h3>NFC LISBON</h3>
           <div class="event-date">PEPEVAULT × NFC SUMMIT</div>
           <div class="event-venue">
             <div class="event-venue-name">Unicorn Factory Lisboa</div>
-            <div class="event-venue-addr">Av. Infante Dom Henrique 143<br>1950-406 Lisboa · Portugal</div>
+            <div class="event-venue-addr">Av. Infante Dom Henrique 143 · Lisboa</div>
           </div>
-          <p class="event-desc">Third-floor gallery integrated with old machinery in a historic flour mill. Outdoor Agora container as the cyber-lounge. Cross-curations with other NFC exhibits for maximum chaos.</p>
-          <iframe class="event-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=-9.110%2C38.728%2C-9.102%2C38.734&amp;layer=mapnik&amp;marker=38.7310917%2C-9.105866" title="Unicorn Factory Lisboa map"></iframe>
-          <div class="ticket-gate">
-            <div class="ticket-gate-label">🎫 REQUIRED — TICKET FROM HOST</div>
-            <div class="ticket-gate-host">NFC SUMMIT 2026</div>
-            <a href="https://www.eventbrite.pt/e/nfc-summit-2026-tickets-1982761401727?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer" class="btn btn-primary">⚡ Get NFC Summit Tickets →</a>
-            <a href="#tickets" class="ticket-fake-link"><span>Want VIP perks? Grab a Fake Ticket →</span></a>
-          </div>
+          <p class="event-desc">Three days in a third-floor gallery built into a historic flour mill — 31 verified Pepe artists across Rare Pepes, FAKERARES, Notable Pepes and Bitcoin Stamps, cross-curated with the rest of NFC for maximum chaos.</p>
+          <span class="lisbon-wrap-stamp">✓ That's a wrap · Lisbon 2026</span>
         </div>
       </article>
 
-      <article class="event-card">
-        <div class="event-card-label">JUN · LATE NIGHT</div>
-        <img decoding="async" loading="lazy" class="event-keyart portrait" src="https://media.pepevault.lol/stampfest-3-flock-party.webp" alt="STAMPFEST 3 — The Flock Party · Sponsored by Stampchain.io · Lisbon Late Night June 2026">
+      <article class="event-card past">
+        <div class="event-card-label">✓ LATE NIGHT</div>
+        <img decoding="async" loading="lazy" class="event-keyart portrait" src="https://media.pepevault.lol/stampfest-3-flock-party.webp" alt="Stampfest 3 — The Flock Party">
         <div class="event-body">
           <h3>STAMPFEST 3 · FLOCK PARTY</h3>
-          <div class="event-date">SPONSORED BY STAMPCHAIN.IO · 3RD ANNIVERSARY OF BITCOIN STAMPS</div>
+          <div class="event-date">STAMPCHAIN.IO · 3 YEARS OF BITCOIN STAMPS</div>
           <div class="event-venue">
-            <div class="event-venue-name">★ Secret Location · Lisbon ★</div>
-            <div class="event-venue-addr">Inside the NFC conference perimeter<br>10:30PM — 5AM · Date confirmed to attendees</div>
+            <div class="event-venue-name">A secret room inside the NFC perimeter</div>
+            <div class="event-venue-addr">10:30 PM — 5 AM · Lisbon</div>
           </div>
-          <p class="event-desc">Stampchain is back in Lisbon to celebrate three years of Bitcoin Stamps with an audiovisual immersive experience — visuals from the PepeVault artists mixed live by <strong>DITA</strong>, music from <strong>FAKE DJ PEPE</strong>, <strong>ARWYN</strong>, and an OG special guest to be announced. Co-presented with PepeVault.</p>
-          <div class="ticket-gate">
-            <div class="ticket-gate-label">★ NFC ATTENDEES — DETAILS TO FOLLOW ★</div>
-            <div class="ticket-gate-host">STAMPCHAIN × PEPEVAULT</div>
-            <a href="https://x.com/Stampchain" target="_blank" rel="noopener noreferrer" class="btn btn-primary">⚡ Follow @Stampchain for the drop →</a>
-            <a href="#support" class="ticket-fake-link"><span>Support the movement · collect the Hall of Memes →</span></a>
-          </div>
-        </div>
-      </article>
-
-      <article class="event-card">
-        <div class="event-card-label">JUN 11</div>
-        <img decoding="async" loading="lazy" class="event-keyart" src="https://media.pepevault.lol/pepex-prague-keyart.webp" alt="PEPEX Prague Key Art">
-        <div class="event-body">
-          <h3>PEPEX PRAGUE</h3>
-          <div class="event-date">WARMUP × 600000000000.com</div>
-          <div class="event-venue">
-            <div class="event-venue-name">Fuchs2 · Bar Upstairs</div>
-            <div class="event-venue-addr">Ostrov Štvanice<br>170 00 Praha 7-Holešovice · Czechia</div>
-          </div>
-          <p class="event-desc">Industrial venue on Štvanice Island during BTC Prague week. Bar upstairs at Fuchs2 — AV setup, full livestream. PepeVault warming up the 600000000000.com party downstairs.</p>
-          <iframe class="event-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=14.430%2C50.092%2C14.443%2C50.098&amp;layer=mapnik&amp;marker=50.0951773%2C14.4363731" title="Fuchs2 Prague map"></iframe>
-          <div class="ticket-gate">
-            <div class="ticket-gate-label">🎫 REQUIRED — TICKET FROM HOST</div>
-            <div class="ticket-gate-host">600000000000.com PARTY</div>
-            <a href="https://600000000000.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">⚡ Get 600000000000.com Tickets →</a>
-            <a href="#tickets" class="ticket-fake-link"><span>Want VIP perks? Grab a Fake Ticket →</span></a>
-          </div>
-          <a href="/live" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1rem; background: rgba(230, 57, 70, 0.08); border: 1.5px solid rgba(230, 57, 70, 0.45); border-radius: var(--radius-card); color: var(--pv-cream); font-family: 'Bebas Neue'; letter-spacing: 0.12em; font-size: 0.95rem; margin-top: 0.8rem; transition: all 0.18s;"><span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--pv-red); animation: pulse-dot 1.5s ease-in-out infinite; flex-shrink: 0;"></span>📺 PEPEVAULT TV — Live stream teaser &amp; countdown →</a>
+          <p class="event-desc">Stampchain's third-anniversary blowout — an audiovisual immersive night with visuals mixed live by DITA and music from FAKE DJ PEPE, ARWYN and OG guests. Co-presented with PepeVault. The flock flew.</p>
+          <span class="lisbon-wrap-stamp">✓ Three years of Stamps</span>
         </div>
       </article>
     </div>
+
+    <div class="lisbon-extras">
+      <div class="lisbon-gift" id="latomonfc">
+        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/latomonfc-asset.gif" alt="LATOMONFC — Nicolas Sierro's on-chain Counterparty proof-of-attendance asset: three periodic-table tiles spelling N, F, C">
+        <div>
+          <p class="lg-eyebrow">$LATOMONFC · THE LISBON POAP</p>
+          <p class="lg-title">The airdrop is incoming</p>
+          <p class="lg-desc">Claims closed on-site at NFC Lisbon. <strong>Nicolas Sierro</strong> is airdropping LATOMONFC to every verified attendee address this week — one per wallet, deduped against prior NFC editions. A Bitcoin-native token of the night you showed up. <a href="https://tokenscan.io/asset/LATOMONFC" target="_blank" rel="noopener noreferrer">View on Counterparty →</a> · <a href="https://blockchainizator.com/#atm" target="_blank" rel="noopener noreferrer">Atomo Collection →</a></p>
+        </div>
+      </div>
+
+      <div class="lisbon-zardoz" id="zardoz">
+        <img decoding="async" loading="lazy" src="https://media.pepevault.lol/zardoz-kevin-head.webp" alt="The floating Zardoz head wearing the KEVIN stamp face">
+        <div>
+          <p class="lz-eyebrow">▮▮ CLASSIFIED · TRANSMISSION COMPLETE ▮▮</p>
+          <p class="lz-title">Zardoz spoke</p>
+          <p class="lz-desc">For one night, in a room without a number, the head hovered and the screen flickered. The chosen — KEVIN holders and OG friends of Pepe — received the transmission. The Vault is good. The Vault is alive.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2461,7 +2503,7 @@ p { max-width: 70ch; }
           <li>Livestream link (if you can't make it in person)</li>
           <li>Community Telegram — where the lore lives</li>
         </ul>
-        <a href="#events" class="tier-cta">Walk Right In →</a>
+        <a href="#prague" class="tier-cta">Walk Right In →</a>
       </article>
 
       <article class="tier-card vip-1">
@@ -2616,67 +2658,6 @@ p { max-width: 70ch; }
   </div>
 </section>
 
-<!-- ===== ZARDOZ SPEAKS — Classified after-hours screening (v44) ===== -->
-<!-- Deepest section before the footer. KEVIN STAMP holders + OG friends of Pepe only. -->
-<!-- No public RSVP. No date/venue leak. Whisper @PepeVault1. -->
-<section class="section zardoz-speaks" id="zardoz">
-  <div class="zd-bg" aria-hidden="true"></div>
-  <div class="container zd-container">
-
-    <p class="zd-eyebrow">★ CLASSIFIED · EYES ONLY · BY INVITATION</p>
-
-    <h2 class="zd-title">ZARDOZ <span class="zd-title-accent">SPEAKS</span></h2>
-
-    <p class="zd-subtitle">An after-hours screening · Lisbon · <em>date and venue withheld</em></p>
-
-    <div class="zd-hero">
-      <img src="https://media.pepevault.lol/zardoz-kevin-head.webp" alt="A floating Zardoz head wearing the KEVIN stamp face — speaking to his chosen ones" loading="lazy" width="1024" height="577">
-    </div>
-
-    <div class="zd-decree">
-      <p>"Zardoz speaks to you, his chosen ones. For one night, in a room without a number, the head will hover and the screen will flicker. The Brutals are not welcome — unless their bandoliers bear <strong>KEVIN</strong>."</p>
-    </div>
-
-    <div class="zd-redacted" role="group" aria-label="Screening details — redacted">
-      <div class="zd-redacted-row">
-        <span class="zd-redacted-label">DATE</span>
-        <span class="zd-redacted-bar">████████████████████████</span>
-      </div>
-      <div class="zd-redacted-row">
-        <span class="zd-redacted-label">VENUE</span>
-        <span class="zd-redacted-bar">████████████████████████</span>
-      </div>
-      <div class="zd-redacted-row">
-        <span class="zd-redacted-label">DOOR</span>
-        <span class="zd-redacted-bar">████████████████████████</span>
-      </div>
-      <div class="zd-redacted-row">
-        <span class="zd-redacted-label">RUNTIME</span>
-        <span class="zd-redacted-value">105 MIN · 1974 · BOORMAN</span>
-      </div>
-      <div class="zd-redacted-row zd-audience">
-        <span class="zd-redacted-label">AUDIENCE</span>
-        <span class="zd-redacted-value zd-audience-stamp">▮▮ KEVIN HOLDERS · OG FRIENDS OF PEPE ▮▮</span>
-      </div>
-    </div>
-
-    <figure class="zd-brutals">
-      <img src="https://media.pepevault.lol/zardoz-pepe-brutals.webp" alt="Two Pepe-faced Brutals in red bandoliers — the chosen, dispatched into the country" loading="lazy" width="809" height="1024">
-      <figcaption>The chosen — already received the transmission.</figcaption>
-    </figure>
-
-    <div class="zd-entry">
-      <p>To present yourself for consideration —</p>
-      <p class="zd-entry-action">
-        WHISPER <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@PEPEVAULT1</a>.<br>
-        Reveal your <strong>KEVIN</strong>. Or have your friends speak for you.
-      </p>
-    </div>
-
-    <p class="zd-closing">The Vault is good · The Vault is alive.</p>
-
-  </div>
-</section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
@@ -2688,7 +2669,7 @@ p { max-width: 70ch; }
       </div>
       <div class="footer-links">
         <a href="https://x.com/pepevault1" target="_blank" rel="noopener noreferrer">@PepeVault1</a>
-        <a href="#events">Events</a>
+        <a href="#prague">Prague</a>
         <a href="#tickets">Fake Tickets</a>
         <a href="mailto:hello@pepevault.lol">Contact</a>
         <button class="egg-trigger" id="eggTrigger" aria-label="Secret roster gallery" title="🐸">🐸</button>
